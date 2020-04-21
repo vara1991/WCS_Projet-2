@@ -54,20 +54,21 @@
     font-family: 'Amatic SC';
     background-color: #000000;
     color: #a29797;
-    font-size: 18px;
+    font-size: 26px;
 }
 
 .pix-jenny{
-    height:20em;
+    height:12em;
 }
 
 .red{
     color: #e1282d;
-    font-size: large;
+    font-size: 26px;;
 }
 
 .bold{
     font-weight: bold;
+    font-size: 26px;
 }
 
 .stat{
@@ -77,6 +78,10 @@
 
 .bio{
     line-height: 2em;
+}
+
+.stat{
+    margin-left: 1em;
 }
 
 /* footer */
