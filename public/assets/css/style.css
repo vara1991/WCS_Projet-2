@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* header */
+
+.navbar{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    background-color: #A3ACB5;
+    height: 2em;
+    width: 100%;
+    opacity: 0.5;
+    font-weight: bold;
+    font-family: "Amatic SC", sans-serif;
+    font-size: 30px;
+}
+
+.navbar li{
+    list-style: none;
+}
+
+.navbar a{
+    color: white;
+    text-decoration:none;
+}
+
+.navbar a:hover{
+    color: darkred;
+    text-decoration:underline;
+}
+.active_link{
+    color: darkred;
+}
+
+.big_title {
+    background-color: black;
+    padding: 1em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    color: darkred;
+    font-size: 90px;
+    font-family: "Amatic SC", sans-serif;
+}
+
+/* home */
+
+.body_home{
+    font-family: 'Amatic SC';
+    background-color: #000000;
+    color: #a29797;
+    font-size: 18px;
+}
+
+.pix-jenny{
+    height:20em;
+}
+
+.red{
+    color: #e1282d;
+    font-size: large;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.stat{
+    margin-top:auto;
+    margin-bottom: auto;
+}
+
+.bio{
+    line-height: 2em;
+}
+
+/* footer */
+
+footer {
+    padding-bottom: 1rem;
+    background-color:black;
+    color: white;
+    font-family: "Amatic SC", sans-serif;
+}
+
+footer li {
+    list-style: none;
+    font-size: 25px;
+}
+
+footer a{
+    color: white;
+    text-decoration:none;
+}
+
+footer a:hover{
+    color: darkred;
+    text-decoration:underline;
+}
+
+.footer_title{
+    text-align:center;
+    padding-bottom:1.5rem;
+    padding-top: 1rem;
+    font-size: 30px;
+    font-weight: bold;
+    color: darkred;
+}
+
+.partenaires{
+    display:flex;
+    justify-content: space-around;
+}
+
+/* Mobile Styles */
+
+@media (max-width:767px) {
+
+    .navbar{
+        flex-wrap: wrap;
+        height: 3.5em;
+    }
+
+    .navbar li{
+        text-align: center;
+        width: 40%;
+    }
+
+    .big_title {
+        padding: 1.5em;
+        padding-bottom: 0.5em;
+    }
+
+    .footer_title{
+        padding-bottom:1rem;
+    }
+
+    .partenaires{
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
