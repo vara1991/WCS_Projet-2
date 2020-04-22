@@ -2,7 +2,6 @@
 
 namespace App\Model;
 
-
 class LogManager extends AbstractManager
 {
     const TABLE = 'user';
@@ -15,12 +14,12 @@ class LogManager extends AbstractManager
     public function login()
     {
 
-        $statement = $this->pdo->prepare("SELECT username,password FROM user WHERE username=:username AND password=:password");
+        $statement = $this->pdo->prepare("SELECT username,password FROM user 
+        WHERE username=:username AND password=:password");
         $statement->bindValue('username', $_POST['pseudo']);
         $statement->bindValue('password', $_POST['password']);
         $statement->execute();
 
         return $statement->fetch();
     }
-
 }

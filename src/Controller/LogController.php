@@ -25,7 +25,7 @@ class LogController extends AbstractController
                 } else {
                     $error['pseudo'] = 'Pseudo introuvable';
                 }
-            }else{
+            } else {
                 $error['form'] = 'Tous les champs doivent être remplis';
             }
         }
