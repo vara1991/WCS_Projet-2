@@ -13,13 +13,10 @@ class LogManager extends AbstractManager
 
     public function login()
     {
-
-        $statement = $this->pdo->prepare("SELECT username,password FROM user 
-        WHERE username=:username AND password=:password");
+        $statement = $this->pdo->prepare("SELECT username,password,role_id FROM user 
+        WHERE username=:username");
         $statement->bindValue('username', $_POST['pseudo']);
-        $statement->bindValue('password', $_POST['password']);
         $statement->execute();
-
         return $statement->fetch();
     }
 }

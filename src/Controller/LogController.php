@@ -7,9 +7,7 @@ class LogController extends AbstractController
 {
     public function index()
     {
-
         $logManager = new LogManager();
-        $connected = false;
         $error = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -17,9 +15,16 @@ class LogController extends AbstractController
                 $log = $logManager->login();
                 if ($_POST['pseudo'] == $log['username']) {
                     if ($_POST['password'] == $log['password']) {
-                        $connected = true;
-                        return $this->twig->render('Home/index.html.twig');
-                    } else {
+                        if ($log['role_id'] == 1) {
+                            return $this->twig->render('Home/index.html.twig', ['connected'=>true]);
+                        } else {
+                            return $this->twig->render('Home/index.html.twig', [
+                                'connected'=>true,
+                                'admin' => true
+                            ]);
+                        }
+                    }
+                    if ($_POST['password'] != $log['password']) {
                         $error['password'] = 'Mauvais mot de passe';
                     }
                 } else {
@@ -31,8 +36,7 @@ class LogController extends AbstractController
         }
 
         return $this->twig->render('Log/index.html.twig', [
-            $connected,
-            'error' => $error,
+            'error' => $error
         ]);
     }
 

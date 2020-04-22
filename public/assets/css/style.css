@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,35 +6,35 @@
 
 /* header */
 
-.navbar{
-    display:flex;
+.navbar {
+    display: flex;
     justify-content: space-around;
     align-items: center;
     position: fixed;
     z-index: 100;
-    background-color: #A3ACB5;
+    background-color: black;
     height: 2em;
     width: 100%;
-    opacity: 0.5;
     font-weight: bold;
     font-family: "Amatic SC", sans-serif;
     font-size: 30px;
 }
 
-.navbar li{
+.navbar li {
     list-style: none;
 }
 
-.navbar a{
+.navbar a {
     color: white;
-    text-decoration:none;
+    text-decoration: none;
 }
 
-.navbar a:hover{
+.navbar a:hover {
     color: darkred;
-    text-decoration:underline;
+    text-decoration: underline;
 }
-.active_link{
+
+.active_link {
     color: darkred;
 }
 
@@ -50,33 +50,58 @@
 
 /* home */
 
-.body_home{
+h1{
+    margin: 0px;
+}
+
+.body_home {
     font-family: 'Amatic SC';
     background-color: #000000;
     color: #a29797;
     font-size: 18px;
 }
 
-.pix-jenny{
-    height:20em;
+.pix-jenny {
+    height: 12em;
+    margin-top: 30px;
 }
 
-.red{
-    color: #e1282d;
-    font-size: large;
+.red {
+    color: darkred;
 }
 
-.bold{
+.bold {
     font-weight: bold;
 }
 
-.stat{
-    margin-top:auto;
+.stat {
+    margin-top: auto;
     margin-bottom: auto;
+    margin-left: 1em;
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Changa', sans-serif;
 }
 
-.bio{
+.stat_title {
+    font-size: 30px;
+}
+
+.bio {
     line-height: 2em;
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Changa', sans-serif;
+}
+
+h3 {
+    font-family: "Amatic SC", sans-serif;
+}
+
+.home_title {
+    font-size: 35px;
+}
+
+.bio_title {
+    font-size: 26px;
 }
 
 /* Log et register */
@@ -121,7 +146,7 @@
 
 footer {
     padding-bottom: 1rem;
-    background-color:black;
+    background-color: black;
     color: white;
     font-family: "Amatic SC", sans-serif;
 }
@@ -131,40 +156,41 @@ footer li {
     font-size: 25px;
 }
 
-footer a{
+footer a {
     color: white;
-    text-decoration:none;
+    text-decoration: none;
 }
 
-footer a:hover{
+footer a:hover {
     color: darkred;
-    text-decoration:underline;
+    text-decoration: underline;
 }
 
-.footer_title{
-    text-align:center;
-    padding-bottom:1.5rem;
+.footer_title {
+    text-align: center;
+    padding-bottom: 1.5rem;
     padding-top: 1rem;
     font-size: 30px;
     font-weight: bold;
     color: darkred;
 }
 
-.partenaires{
-    display:flex;
+.partenaires {
+    display: flex;
     justify-content: space-around;
 }
 
-/* Mobile Styles */
+/*///////////////////////////////////////  Mobile Styles //////////////////////////////////////////////////////*/
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
 
-    .navbar{
+    /* header */
+    .navbar {
         flex-wrap: wrap;
         height: 3.5em;
     }
 
-    .navbar li{
+    .navbar li {
         text-align: center;
         width: 40%;
     }
@@ -174,13 +200,35 @@ footer a:hover{
         padding-bottom: 0.5em;
     }
 
-    .footer_title{
-        padding-bottom:1rem;
+    /* footer */
+    .footer_title {
+        padding-bottom: 1rem;
     }
 
-    .partenaires{
+    .partenaires {
         flex-direction: column;
         align-items: center;
+    }
+
+    /* home */
+    .home_title {
+        font-size: 28px;
+    }
+    .pix-jenny {
+        height: 12em;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1em;
+    }
+
+    .stat {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16px;
+
+    }
+    .stat_title {
+        font-size: 28px;
     }
 
 }

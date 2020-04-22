@@ -9,8 +9,6 @@
         <meta name="description" content="">
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/Article-Dual-Column.css">
         <link rel="stylesheet" href="/assets/css/style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap"/>
         {% block stylesheet %}{% endblock %}
@@ -23,9 +21,16 @@
             <nav>
                 <ul class="navbar">
                     <li><a href="/home/index">Accueil</a></li>
-                    <li><a href="/article/index">Cibles</a></li>
+                    {% if connected == true %}
+                        <li><a href="/article/index">Cibles</a></li>
+                    {% endif %}
                     <li><a href="/contact/index">Contact</a></li>
-                    <li><a href="/log/index">Log In</a></li>
+                    {% if connected == false %}
+                        <li><a href="/log/index">Login</a></li>
+                    {% endif %}
+                    {% if connected == true %}
+                        <li><a href="">Logout</a></li>
+                    {% endif %}
                 </ul>
             </nav>
             <h1 class="big_title">Born to kill</h1>
@@ -40,7 +45,7 @@
             <nav>
                 <ul class="partenaires">
                     <li><a href="https://www.linkedin.com/in/varapone-gaire-5029b819b/" target="_blank">Varapone</a></li>
-                    <li><a href="https://openclassrooms.com" target="_blank">Lisa</a></li>
+                    <li><a href="https://www.linkedin.com/in/lisa-michel-dev/" target="_blank">Lisa</a></li>
                     <li class="nico"><a href="https://openclassrooms.com" target="_blank">Nicolas</a></li>
                 </ul>
             </nav>
