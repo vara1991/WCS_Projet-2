@@ -50,7 +50,7 @@
 
 /* home */
 
-h1{
+h1 {
     margin: 0px;
 }
 
@@ -101,7 +101,7 @@ h3 {
 }
 
 .bio_title {
-    font-size: 26px;
+    font-size: 30px;
 }
 
 /* footer */
@@ -176,6 +176,7 @@ footer a:hover {
     .home_title {
         font-size: 28px;
     }
+
     .pix-jenny {
         height: 12em;
         margin-left: auto;
@@ -189,6 +190,7 @@ footer a:hover {
         font-size: 16px;
 
     }
+
     .stat_title {
         font-size: 28px;
     }

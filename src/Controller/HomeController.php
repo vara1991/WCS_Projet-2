@@ -8,6 +8,8 @@
 
 namespace App\Controller;
 
+use App\Model\HomeManager;
+
 class HomeController extends AbstractController
 {
 
@@ -21,6 +23,17 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Home/index.html.twig');
+        $hm = new HomeManager();
+        $gain = $hm->bounty();
+        $kill = $hm->kill();
+        $maxkill = $hm->killByDate();
+        $favWeapon = $hm->favWeapon();
+        return $this->twig->render('Home/index.html.twig', [
+                'gain' => $gain['total_prime'],
+                'kill' => $kill['dead_status'],
+                'maxkill' => $maxkill['same_date'],
+                'favWeapon' => $favWeapon['favorite_weapon']
+            ]);
+        ;
     }
 }
