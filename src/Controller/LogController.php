@@ -16,11 +16,18 @@ class LogController extends AbstractController
                 if ($_POST['pseudo'] == $log['username']) {
                     if ($_POST['password'] == $log['password']) {
                         if ($log['role_id'] == 1) {
-                            return $this->twig->render('Home/index.html.twig', ['connected'=>true]);
-                        } else {
+                            session_start();
+                            $_SESSION['login'] = true;
                             return $this->twig->render('Home/index.html.twig', [
-                                'connected'=>true,
-                                'admin' => true
+                                'connected' => $_SESSION['login']
+                            ]);
+                        } else {
+                            session_start();
+                            $_SESSION['login'] = true;
+                            $_SESSION['admin'] = true;
+                            return $this->twig->render('Home/index.html.twig', [
+                                'connected' => $_SESSION['login'],
+                                'admin' => $_SESSION['admin']
                             ]);
                         }
                     }
@@ -37,6 +44,15 @@ class LogController extends AbstractController
 
         return $this->twig->render('Log/index.html.twig', [
             'error' => $error
+        ]);
+    }
+
+    public function logout()
+    {
+        session_start();
+        $_SESSION['login'] = false;
+        return $this->twig->render('Home/index.html.twig', [
+            'connected' => $_SESSION['login']
         ]);
     }
 
