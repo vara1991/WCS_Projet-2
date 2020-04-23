@@ -21,9 +21,16 @@
             <nav>
                 <ul class="navbar">
                     <li><a href="/home/index">Accueil</a></li>
-                    <li><a href="/article/index">Cibles</a></li>
+                    {% if connected == true %}
+                        <li><a href="/article/index">Cibles</a></li>
+                    {% endif %}
                     <li><a href="/contact/index">Contact</a></li>
-                    <li><a href="/log/index">Log In</a></li>
+                    {% if connected == false %}
+                        <li><a href="/log/index">Login</a></li>
+                    {% endif %}
+                    {% if connected == true %}
+                        <li><a href="">Logout</a></li>
+                    {% endif %}
                 </ul>
             </nav>
             <h1 class="big_title">Born to kill</h1>

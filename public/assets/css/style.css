@@ -104,6 +104,44 @@ h3 {
     font-size: 26px;
 }
 
+/* Log et register */
+
+.fieldset_log, .fieldset_r{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:solid 5px;
+    margin: 6rem auto ;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+.label_log, .label_r{
+    align-self: flex-start;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.input_log, .input_r{
+    width: 80%;
+    padding: 0.5rem;
+}
+
+.button_log, .button_r{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 80%;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+#button_log, #button_r{
+    width: 40%;
+    padding: 0.5rem;
+}
+
 /* footer */
 
 footer {
