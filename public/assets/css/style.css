@@ -142,6 +142,36 @@ h3 {
     padding: 0.5rem;
 }
 
+/* welcome et goodbye*/
+
+.welcome {
+    height: 25rem;
+    background-color: black;
+}
+
+.welcome h2{
+    text-align: center;
+    color: darkred;
+    padding: 4rem;
+    font-family: "Amatic SC", sans-serif;
+    font-weight: bold;
+    font-size: 100px;
+}
+
+.goodbye {
+    height: 25rem;
+    background-color: black;
+}
+
+.goodbye h2{
+    text-align: center;
+    color: darkred;
+    padding: 4rem;
+    font-family: "Amatic SC", sans-serif;
+    font-weight: bold;
+    font-size: 100px;
+}
+
 /* footer */
 
 footer {
