@@ -24,6 +24,10 @@ class HomeController extends AbstractController
     public function index()
     {
         session_start();
+        if (empty($_SESSION['login'])) {
+            $_SESSION['login'] = false;
+        }
+
         $homeManager = new HomeManager();
         $gain = $homeManager->bounty();
         $kill = $homeManager->kill();

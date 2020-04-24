@@ -50,10 +50,10 @@ class LogController extends AbstractController
     public function logout()
     {
         session_start();
-        $_SESSION['login'] = false;
-        return $this->twig->render('Home/index.html.twig', [
-            'connected' => $_SESSION['login']
-        ]);
+        session_destroy();
+        $_SESSION = array();
+        unset($_SESSION);
+        return $this->twig->render('Home/index.html.twig');
     }
 
     public function register()
