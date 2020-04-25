@@ -23,6 +23,12 @@ class ContactController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Contact/index.html.twig');
+        session_start();
+        if (empty($_SESSION['login'])) {
+            $_SESSION['login'] = false;
+        }
+        return $this->twig->render('Contact/index.html.twig', [
+            'connected' => $_SESSION['login'],
+        ]);
     }
 }

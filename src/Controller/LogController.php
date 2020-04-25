@@ -16,11 +16,22 @@ class LogController extends AbstractController
                 if ($_POST['pseudo'] == $log['username']) {
                     if ($_POST['password'] == $log['password']) {
                         if ($log['role_id'] == 1) {
-                            return $this->twig->render('Home/index.html.twig', ['connected'=>true]);
+                            session_start();
+                            $_SESSION['login'] = true;
+                            $_SESSION['pseudo'] = $_POST['pseudo'];
+                            return $this->twig->render('Log/welcome.html.twig', [
+                                'connected' => $_SESSION['login'],
+                                'pseudo' => $_SESSION['pseudo']
+                            ]);
                         } else {
-                            return $this->twig->render('Home/index.html.twig', [
-                                'connected'=>true,
-                                'admin' => true
+                            session_start();
+                            $_SESSION['login'] = true;
+                            $_SESSION['admin'] = true;
+                            $_SESSION['pseudo'] = $_POST['pseudo'];
+                            return $this->twig->render('Log/welcome.html.twig', [
+                                'connected' => $_SESSION['login'],
+                                'admin' => $_SESSION['admin'],
+                                'pseudo' => $_SESSION['pseudo']
                             ]);
                         }
                     }
@@ -38,6 +49,15 @@ class LogController extends AbstractController
         return $this->twig->render('Log/index.html.twig', [
             'error' => $error
         ]);
+    }
+
+    public function logout()
+    {
+        session_start();
+        session_destroy();
+        $_SESSION = array();
+        unset($_SESSION);
+        return $this->twig->render('Log/goodbye.html.twig');
     }
 
     public function register()
