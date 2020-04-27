@@ -27,10 +27,33 @@ class TargetManager extends AbstractManager
     }
 
 
-    public function target()
+    public function getWeapon($id)
     {
-            // a réparer 
-            //$statement = $this->pdo->query("SELECT weapon_name FROM weapon JOIN target ON target.weapon_id = weapon.id");
-            //return $statement->fetchAll();
+            $statement = $this->pdo->prepare("SELECT weapon_name FROM weapon WHERE id=:weapon_id");
+            $statement->bindValue('weapon_id', $id, \PDO::PARAM_INT);
+
+        if ($statement->execute()) {
+            return $statement->fetchAll();
+        }
+    }
+
+    public function getStatus($id)
+    {
+            $statement = $this->pdo->prepare("SELECT status_name FROM status WHERE id=:status_id");
+            $statement->bindValue('status_id', $id, \PDO::PARAM_INT);
+
+        if ($statement->execute()) {
+            return $statement->fetchAll();
+        }
+    }
+
+    public function getImg($id)
+    {
+        $statement = $this->pdo->prepare("SELECT img FROM target WHERE id = 3;");
+        $statement->bindValue('img', $id, \PDO::PARAM_STR);
+
+        if ($statement->execute()) {
+            return $statement->fetchAll();
+        }
     }
 }

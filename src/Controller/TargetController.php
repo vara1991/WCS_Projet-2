@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: root
@@ -30,14 +31,33 @@ class TargetController extends AbstractController
     public function index()
     {
         $tmr = new TargetManager();
-        $items = $tmr->selectAll();
-        //$weapon = $tmr->weapon();
-        //var_dump($weapon);
+        $targets = $tmr->selectAll();
+        $result = [];
+        foreach ($targets as $target) {
+            if (!empty($target['weapon_id'])) {
+                $weapon = $tmr->getWeapon(intval($target['weapon_id']));
+                foreach ($weapon as $item) {
+                    $target['weapon_name'] = $item['weapon_name'];
+                }
+            }
+            if (!empty($target['status_id'])) {
+                $status = $tmr->getStatus(intval($target['status_id']));
+                foreach ($status as $item) {
+                    $target['status_name'] = $item['status_name'];
+                }
+            }
+            if (!empty($target['img'])) {
+                $img = $tmr->getImg(intval($target['img']));
+                foreach ($img as $item) {
+                    $target['img'] = $item['img'];
+                }
+            }
 
-        return $this->twig->render('Target/index.html.twig',[
-            'items' => $items,
-            //'weapon'=> $weapon       
+            array_push($result, $target);
+        }
+
+        return $this->twig->render('Target/index.html.twig', [
+            'targets' => $result
         ]);
-
     }
 }
