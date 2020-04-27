@@ -7,6 +7,7 @@ class LogController extends AbstractController
 {
     public function index()
     {
+        session_start();
         $logManager = new LogManager();
         $error = [];
 
@@ -16,7 +17,6 @@ class LogController extends AbstractController
                 if ($_POST['pseudo'] == $log['username']) {
                     if ($_POST['password'] == $log['password']) {
                         if ($log['role_id'] == 1) {
-                            session_start();
                             $_SESSION['login'] = true;
                             $_SESSION['pseudo'] = $_POST['pseudo'];
                             return $this->twig->render('Log/welcome.html.twig', [

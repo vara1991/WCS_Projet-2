@@ -123,9 +123,10 @@ h3 {
     margin-left: 10%;
 }
 
-.input_log, .input_r {
+.input_log, .input_r,#select_role {
     width: 80%;
     padding: 0.5rem;
+    margin: auto;
 }
 
 .button_log, .button_r {
