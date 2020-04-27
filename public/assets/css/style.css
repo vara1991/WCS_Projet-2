@@ -50,7 +50,7 @@
 
 /* home */
 
-h1{
+h1 {
     margin: 0px;
 }
 
@@ -101,7 +101,114 @@ h3 {
 }
 
 .bio_title {
-    font-size: 26px;
+    font-size: 30px;
+}
+
+/* Log et register */
+
+.fieldset_log, .fieldset_r {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 5px;
+    margin: 6rem auto;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+.label_log, .label_r {
+    align-self: flex-start;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.input_log, .input_r {
+    width: 80%;
+    padding: 0.5rem;
+}
+
+.button_log, .button_r {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 80%;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+#button_log, #button_r {
+    width: 40%;
+    padding: 0.5rem;
+}
+
+/* welcome et goodbye*/
+
+.welcome {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    background-color: transparent;
+    z-index: 2;
+}
+
+.welcome h2 {
+    text-align: center;
+    color: darkred;
+    padding: 4rem;
+    font-family: "Amatic SC", sans-serif;
+    font-weight: bold;
+    font-size: 100px;
+}
+
+.welcome p {
+    text-align: center;
+    font-size: 34px
+}
+
+.welcome a:hover {
+    text-decoration: none;
+    font-size: larger;
+}
+
+.cover video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.cover .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.goodbye {
+    height: 25rem;
+    background-color: black;
+}
+
+.goodbye h2 {
+    text-align: center;
+    color: darkred;
+    padding: 4rem;
+    font-family: "Amatic SC", sans-serif;
+    font-weight: bold;
+    font-size: 100px;
 }
 
 /* footer */
@@ -176,6 +283,7 @@ footer a:hover {
     .home_title {
         font-size: 28px;
     }
+
     .pix-jenny {
         height: 12em;
         margin-left: auto;
@@ -187,10 +295,19 @@ footer a:hover {
         margin-left: auto;
         margin-right: auto;
         font-size: 16px;
-
     }
+
     .stat_title {
         font-size: 28px;
+    }
+
+    /* welcome et goodbye*/
+    .welcome {
+        position: absolute;
+        top: 20%;
+        left: 10%;
+        background-color: transparent;
+        z-index: 2;
     }
 
 }

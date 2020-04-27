@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+
+   <form method="post">
+       <fieldset class="fieldset_log">
+           <label for="input_pseudo" class="label_log">Pseudo</label>
+           <input type="text" id="input_pseudo" name="pseudo" class="input_log">
+           <label for="input_password" class="label_log">Password</label>
+           <input type="password" id="input_password" name="password" class="input_log">
+           <div class="button_log">
+               <button type="submit" id="button_log" name="button_login">Login</button>
+           </div>
+           <p class="link_register">Toujours pas inscrit ? <a href="/log/register">S'inscrire</a> </p>
+
+           {% if error.form %}
+               {{error.form}}
+           {% elseif error.pseudo %}
+               {{error.pseudo}}
+           {% elseif error.password %}
+               {{error.password}}
+           {% endif %}
+
+       </fieldset>
+   </form>
+
+
+
+{% endblock %}
+

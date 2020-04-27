@@ -1,5 +1,5 @@
 {% extends 'layout.html.twig' %}
-
+{% block title %}Home{% endblock %}
 {% block content %}
 
 <div class="body_home">
@@ -25,13 +25,16 @@
                             <h3 class="text-center"><span class="bold red stat_title">STATISTIQUES MVP</h3>
                     </span><br>
                     <li>
-                        Tâches éliminées : <span class="bold">24</span>
+                        Tâches éliminées : <span class="bold">{{ kill }}</span>
                     </li>
                     <li>
-                        Max Tâches éliminées/jour : <span class="bold">4</span>
+                        Max Tâches éliminées/jour : <span class="bold">{{ maxkill }}</span>
                     </li>
                     <li>
-                        Outil préféré : <span class="bold">Plumeau</span>
+                        Outil préféré : <span class="bold">{{ favWeapon }}</span>
+                    </li>
+                    <li>
+                        Total gains : <span class="bold">{{ gain }} €</span>
                     </li>
                     </ul>
                     </span>
@@ -40,7 +43,7 @@
 
                 <div class="row justify-content-md-center">
                     <div class="text-center">
-                        <span class="bold bio_title">Vous êtes dans de sales draps et vous avez besoin d’un grand nettoyage&nbsp;?</span>
+                        <span class="bold red bio_title">Vous êtes dans de sales draps et vous avez besoin d’un grand nettoyage&nbsp;?</span>
                         <p class="bio"><br>Jenny vous propose ses services pour vous aider à vous
                             débarrasser des plus grosses tâches qui vous entourent. Autodidacte et ingénieuse, Jenny a
                             développé des méthodes de nettoyage qui peuvent parfois paraître violentes, mais qui sont
