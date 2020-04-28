@@ -46,6 +46,7 @@
     color: darkred;
     font-size: 90px;
     font-family: "Amatic SC", sans-serif;
+    font-weight: bold;
 }
 
 /* home */
@@ -106,27 +107,59 @@ h3 {
 
 /* Log et register */
 
+.bg-log{
+    background-image: url("https://i2.wp.com/secretnews.fr/wp-content/uploads/2018/10/tueurgage.jpg?resize=1024%2C576&ssl=1");
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: center;
+    background-color: black;
+    padding: 10rem;
+}
+
+.bg-r{
+    background-image: url("https://store-images.s-microsoft.com/image/apps.63664.67008091102654339.9fe0ac03-105b-406e-a686-51ee1b2afca1.b301935d-6dc3-4f7a-bdbe-708530b0d558?mode=scale&q=90&h=1080&w=1920");
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: right;
+    background-color: black;
+    padding: 10rem;
+}
+
 .fieldset_log, .fieldset_r {
-    width: 30%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid 5px;
-    margin: 6rem auto;
+    border: none;
+    margin: auto;
     padding-top: 4rem;
     padding-bottom: 2rem;
+    background-color: rgb(96,96,96,0.3);
+
 }
 
 .label_log, .label_r {
     align-self: flex-start;
     width: 80%;
     margin-left: 10%;
+    color: white;
+    font-weight: bold;
 }
 
-.input_log, .input_r,#select_role {
+.link_register{
+    color: white;
+    text-align: center;
+}
+
+.input_log, .input_r{
     width: 80%;
     padding: 0.5rem;
     margin: auto;
+    margin-bottom: 1rem;
+}
+
+.input_log{
+    margin-bottom: 1.5rem;
 }
 
 .button_log, .button_r {
@@ -141,6 +174,21 @@ h3 {
 #button_log, #button_r {
     width: 40%;
     padding: 0.5rem;
+    border-radius: 5%;
+    font-weight: bold;
+}
+#button_log:hover, #button_r:hover{
+    background-color: darkred;
+    border: darkred;
+    color:black;
+    opacity: 0.6;
+}
+
+.error{
+    color: darkred;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
 }
 
 /* welcome et goodbye*/
@@ -229,6 +277,7 @@ footer li {
 footer a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
 }
 
 footer a:hover {
@@ -309,6 +358,25 @@ footer a:hover {
         left: 10%;
         background-color: transparent;
         z-index: 2;
+    }
+
+    /* Log et register */
+    .bg-r{
+        width: 100%;
+        height: 100%;
+    }
+
+    .form-log-r{
+        width: 100%;
+        height: 100%;
+    }
+    .fieldset_log, .fieldset_r{
+        width: 100%;
+        height: 100%;
+    }
+
+    .bg-log,.bg-r{
+        background-size: cover;
     }
 
 }

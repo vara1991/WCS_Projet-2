@@ -9,27 +9,34 @@ class RegisterController extends AbstractController
     public function index()
     {
         session_start();
+
         $registerManager = new RegisterManager();
-        $users = $registerManager->selectAll();
         $error = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (!empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['password'])
-            && !empty($_POST['role_id'])) {
-                $users = $registerManager->add();
-                $_SESSION['login'] = true;
-                $_SESSION['pseudo'] = $_POST['pseudo'];
-                return $this->twig->render('Log/welcome.html.twig', [
-                    'connected' => $_SESSION['login'],
-                    'pseudo' => $_SESSION['pseudo']
-                ]);
+            if (!empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['password'])) {
+                $confirmSpeudo = $registerManager->user();
+                if ($_POST['pseudo'] != $confirmSpeudo['username']) {
+                    if ($_POST['password'] == $_POST['confirmPassword']) {
+                        $registerManager->add();
+                        $_SESSION['login'] = true;
+                        $_SESSION['pseudo'] = $_POST['pseudo'];
+                        return $this->twig->render('Log/welcome.html.twig', [
+                            'connected' => $_SESSION['login'],
+                            'pseudo' => $_SESSION['pseudo']
+                        ]);
+                    } else {
+                        $error['password'] = 'Mot de passe incorrect';
+                    }
+                } else {
+                    $error['pseudo'] = 'Le pseudo existe déjà';
+                }
             } else {
                 $error['form'] = 'Tous les champs doivent être remplis';
             }
         }
 
         return $this->twig->render('Log/register.html.twig', [
-            'users' => $users,
             'error' => $error
         ]);
     }
