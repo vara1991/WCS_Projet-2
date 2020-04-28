@@ -49,7 +49,7 @@ class TargetManager extends AbstractManager
 
     public function getImg($id)
     {
-        $statement = $this->pdo->prepare("SELECT img FROM target WHERE id = 3;");
+        $statement = $this->pdo->prepare("SELECT img FROM target WHERE id=:img;");
         $statement->bindValue('img', $id, \PDO::PARAM_STR);
 
         if ($statement->execute()) {
