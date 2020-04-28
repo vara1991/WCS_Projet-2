@@ -1,0 +1,7 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Edit item {{ item.title }}</h1>
+    {% include 'Admin/_form.html.twig' %}
+    <a href="/Admin/show/{{ item.id }}">Back</a>
+{% endblock %}
