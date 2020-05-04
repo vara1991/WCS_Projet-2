@@ -1,0 +1,36 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+  <h1>Cibles</h1>
+
+<div class="container">
+<div class="row">
+
+{% for item in targets %}
+
+
+  
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+          <img src="{{ item.img }}" alt="" />
+          <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">
+      
+            {{ item.bio }}</br>
+            {{ item.status_name }}</br>
+            {{ item.bounty }} </br>
+            {{ item.date_kill }} </br>
+            {{ item.weapon_name }}</br>
+
+          </p>
+      
+        </div>
+     </div>  
+    </div>
+  {% endfor %}
+  </div>
+ </div> 
+     
+  
+{% endblock %}

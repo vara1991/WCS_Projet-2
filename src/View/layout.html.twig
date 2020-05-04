@@ -8,6 +8,7 @@
         <meta name="author" content="Varapone Lisa Nicolas">
         <meta name="description" content="">
 
+        <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="/assets/css/style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap"/>
@@ -22,14 +23,14 @@
                 <ul class="navbar">
                     <li><a href="/home/index">Accueil</a></li>
                     {% if connected == true %}
-                        <li><a href="/article/index">Cibles</a></li>
+                        <li><a href="/target/index">Cibles</a></li>
                     {% endif %}
                     <li><a href="/contact/index">Contact</a></li>
                     {% if connected == false %}
                         <li><a href="/log/index">Login</a></li>
                     {% endif %}
                     {% if connected == true %}
-                        <li><a href="">Logout</a></li>
+                        <li><a href="/log/logout">Logout</a></li>
                     {% endif %}
                 </ul>
             </nav>
@@ -46,7 +47,7 @@
                 <ul class="partenaires">
                     <li><a href="https://www.linkedin.com/in/varapone-gaire-5029b819b/" target="_blank">Varapone</a></li>
                     <li><a href="https://www.linkedin.com/in/lisa-michel-dev/" target="_blank">Lisa</a></li>
-                    <li class="nico"><a href="https://openclassrooms.com" target="_blank">Nicolas</a></li>
+                    <li class="nico"><a href="https://www.linkedin.com/in/nicolas-legrand-dev/" target="_blank">Nicolas</a></li>
                 </ul>
             </nav>
         </footer>
@@ -56,8 +57,9 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         {% block javascript %}{% endblock %}
     </body>
-
+    
 </html>
+
 
 
 

@@ -15,6 +15,10 @@ class ContactController extends AbstractController
 
     public function index()
     {
+        session_start();
+        if (empty($_SESSION['login'])) {
+            $_SESSION['login'] = false;
+        }
         $error = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (!empty($_POST['email']) && !empty($_POST['name']) && !empty($_POST['subject']) && !empty($_POST['message'])) {
@@ -34,6 +38,7 @@ class ContactController extends AbstractController
                     [
                         'name' => $name,
                         'subject' => $subject,
+                        'connected' => $_SESSION['login'],
                     ]
                 );
             }
@@ -44,7 +49,8 @@ class ContactController extends AbstractController
         return $this->twig->render(
             'Contact/index.html.twig',
             [
-                'error' => $error
+                'error' => $error,
+                'connected' => $_SESSION['login'],
             ]
         );
     }

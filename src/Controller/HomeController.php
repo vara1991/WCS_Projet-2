@@ -23,12 +23,19 @@ class HomeController extends AbstractController
      */
     public function index()
     {
+        session_start();
+        if (empty($_SESSION['login'])) {
+            $_SESSION['login'] = false;
+        }
+
         $homeManager = new HomeManager();
         $gain = $homeManager->bounty();
         $kill = $homeManager->kill();
         $maxkill = $homeManager->killByDate();
         $favWeapon = $homeManager->favWeapon();
+
         return $this->twig->render('Home/index.html.twig', [
+                'connected' => $_SESSION['login'],
                 'gain' => $gain['total_prime'],
                 'kill' => $kill['dead_status'],
                 'maxkill' => $maxkill['same_date'],

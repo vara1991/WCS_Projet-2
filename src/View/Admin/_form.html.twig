@@ -1,0 +1,51 @@
+<body>
+
+<div id="signup-form">
+
+
+    <div id="signup-inner">
+
+        <div class="clearfix" id="header">
+
+
+
+        </div>
+
+
+<form method="post">
+
+    <label for="name">Name target</label>
+    <input type="text" value="{{ item.name }}" name="name">
+
+    <label for="status">Status</label>
+    <input type="text" value="{{ item.status_id }}" name="status_id">
+
+    <label for="bounty">Bounty</label>
+    <input type="text" value="{{ item.bounty }}" name="bounty">
+
+    <label for="date">Date kill</label>
+    <input type="text" value="{{ item.date_kill }}" name="date_kill">
+
+    <label for="weapon">Weapon</label>
+    <input type="text" value="{{ item.weapon_id }}" name="weapon_id">
+
+    <label for="img">Image target</label>
+    <input type="text" value="{{ item.img }}" name="img">
+   
+
+    <label for="Bio">Bio</label>
+    <textarea name="bio" value="{{ item.bio }}" cols="30" rows="10"></textarea>
+
+    <input type="submit" value="ADD">
+</form>
+
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+</body>
