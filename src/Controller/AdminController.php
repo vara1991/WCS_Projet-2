@@ -66,15 +66,26 @@ class AdminController extends AbstractController
     public function update(int $id): string
     {
         $adm = new AdminManager();
-        $item = $adm->selectOneById($id);
-
+        $objet = $adm->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $item['title'] = $_POST['title'];
+            $item = [
+                'id' => $_POST['id'],
+                'name' => $_POST['name'],
+                'status_id' => $_POST['status_id'],
+                'bounty' => $_POST['bounty'],
+                'date_kill' => $_POST['date_kill'],
+                'weapon_id' => $_POST['weapon_id'],
+                'bio' => $_POST['bio'],
+                'img' => $_POST['img'],
+
+            ];
+
             $adm->update($item);
+            header('Location:/target/index');
         }
 
-        return $this->twig->render('Admin/edit.html.twig', ['item' => $item]);
+        return $this->twig->render('Admin/edit.html.twig', ['item' => $objet]);
     }
 
 
@@ -95,14 +106,13 @@ class AdminController extends AbstractController
             $item = [
 
                 'name' => $_POST['name'],
-                'bio' => $_POST['bio'],
                 'status_id' => $_POST['status_id'],
                 'bounty' => $_POST['bounty'],
                 'date_kill' => $_POST['date_kill'],
                 'weapon_id' => $_POST['weapon_id'],
                 'bio' => $_POST['bio'],
                 'img' => $_POST['img'],
-                
+
                 ];
 
             $id = $adm->insert($item);
