@@ -48,7 +48,7 @@ class AdminManager extends AbstractManager
         $statement->bindValue('img', $item['img'], \PDO::PARAM_STR);
 
         if ($statement->execute()) {
-            return (int) $this->pdo->lastInsertId();
+            return (int)$this->pdo->lastInsertId();
         }
     }
 
@@ -70,11 +70,18 @@ class AdminManager extends AbstractManager
      */
     public function update(array $item): bool
     {
-
+       
         // prepared request
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `title` = :title WHERE id=:id");
+        $statement = $this->pdo->prepare("UPDATE  " . self::TABLE . " SET `name` = :name, `bio` = :bio, `status_id` = :status_id, `bounty` = :bounty, `date_kill` = :date_kill, `weapon_id` = :weapon_id, `img` = :img WHERE id= :id");
         $statement->bindValue('id', $item['id'], \PDO::PARAM_INT);
-        $statement->bindValue('title', $item['title'], \PDO::PARAM_STR);
+        $statement->bindValue('name', $item['name'], \PDO::PARAM_STR);
+        $statement->bindValue('status_id', $item['status_id'], \PDO::PARAM_INT);
+        $statement->bindValue('bounty', $item['bounty'], \PDO::PARAM_STR);
+        $statement->bindValue('date_kill', $item['date_kill'], \PDO::PARAM_STR);
+        $statement->bindValue('weapon_id', $item['weapon_id'], \PDO::PARAM_INT);
+        $statement->bindValue('bio', $item['bio'], \PDO::PARAM_STR);
+        $statement->bindValue('img', $item['img'], \PDO::PARAM_STR);
+
 
         return $statement->execute();
     }

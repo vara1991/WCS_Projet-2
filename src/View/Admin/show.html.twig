@@ -2,8 +2,8 @@
 
 {% block content %}
     <h1>Item {{ item.title }}</h1>
-    <p>{{ item.id }}. {{ item.title }}</p>
-    <a href="/Admin/edit/{{ item.id }}">Edit</a>
+    <p>{{ item.id }}. {{ item.name }}</p>
+    <a href="/Admin/update/{{ item.id }}">Edit</a>
     <a href="/Admin/delete/{{item.id}}">Supprimer</a>
     <a href="/Admin/index">Back</a>
 {% endblock %}
