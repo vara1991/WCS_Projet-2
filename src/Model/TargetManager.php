@@ -18,6 +18,7 @@ class TargetManager extends AbstractManager
      *
      */
     const TABLE = 'target';
+
     /**
      *  Initializes this class.
      */
@@ -29,8 +30,8 @@ class TargetManager extends AbstractManager
 
     public function getWeapon($id)
     {
-            $statement = $this->pdo->prepare("SELECT weapon_name FROM weapon WHERE id=:weapon_id");
-            $statement->bindValue('weapon_id', $id, \PDO::PARAM_INT);
+        $statement = $this->pdo->prepare("SELECT weapon_name FROM weapon WHERE id=:weapon_id");
+        $statement->bindValue('weapon_id', $id, \PDO::PARAM_INT);
 
         if ($statement->execute()) {
             return $statement->fetchAll();
@@ -39,8 +40,8 @@ class TargetManager extends AbstractManager
 
     public function getStatus($id)
     {
-            $statement = $this->pdo->prepare("SELECT status_name FROM status WHERE id=:status_id");
-            $statement->bindValue('status_id', $id, \PDO::PARAM_INT);
+        $statement = $this->pdo->prepare("SELECT status_name FROM status WHERE id=:status_id");
+        $statement->bindValue('status_id', $id, \PDO::PARAM_INT);
 
         if ($statement->execute()) {
             return $statement->fetchAll();
@@ -55,5 +56,19 @@ class TargetManager extends AbstractManager
         if ($statement->execute()) {
             return $statement->fetchAll();
         }
+    }
+
+    public function getDead()
+    {
+        $statement = $this->pdo->query('SELECT name FROM target WHERE status_id = 1');
+
+        return $statement->fetchAll();
+    }
+
+    public function getAlive()
+    {
+        $statement = $this->pdo->query('SELECT name FROM target WHERE status_id=2');
+
+        return $statement->fetchAll();
     }
 }

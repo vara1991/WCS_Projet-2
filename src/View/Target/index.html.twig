@@ -1,36 +1,57 @@
 {% extends 'layout.html.twig' %}
-
 {% block content %}
-  <h1>Cibles</h1>
 
-<div class="container">
-<div class="row">
+    <body class="target">
+    <h1>Cibles</h1>
 
-{% for item in targets %}
+    {% if admin == true %}
+        <a href="/Admin/index">Accès Admin</a>
+    {% endif %}
+    <div class="row">
+        <div class="col-8">
+            <div class="container-inside">
+                <div class="row">
+                    {% for item in targets %}
+                        <div class="col">
+                            <div class="card" style="width: 18rem;">
+                                <img src="{{ item.img }}" alt=""/>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ item.name }}</h5>
+                                    <p class="card-text">
+                                        {{ item.bio }}</br>
+                                        {{ item.status_name }}</br>
+                                        {{ item.bounty }} </br>
+                                        {{ item.date_kill }} </br>
+                                        {{ item.weapon_name }}</br>
 
-
-  
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-          <img src="{{ item.img }}" alt="" />
-          <div class="card-body">
-          <h5 class="card-title">{{ item.name }}</h5>
-          <p class="card-text">
-      
-            {{ item.bio }}</br>
-            {{ item.status_name }}</br>
-            {{ item.bounty }} </br>
-            {{ item.date_kill }} </br>
-            {{ item.weapon_name }}</br>
-
-          </p>
-      
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-     </div>  
+
+
+        <div class="col-4">
+
+            <ul class="list-group list-group-flush left">
+                <h2>Deathlist</h2>
+                {% for item in alive %}
+                    <li class="list-group-item">{{ item.name }}</li>
+                {% endfor %}
+            </ul>
+
+            <ul class="list-group list-group-flush right">
+                {% for item in dead %}
+                    <li class="list-group-item">{{ item.name }}</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
     </div>
-  {% endfor %}
-  </div>
- </div> 
-     
-  
+    </div>
+    </body>
 {% endblock %}

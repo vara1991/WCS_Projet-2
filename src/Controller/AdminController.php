@@ -29,10 +29,19 @@ class AdminController extends AbstractController
      */
     public function index()
     {
-        $adm= new AdminManager();
+        session_start();
+        if (empty($_SESSION['login'])) {
+            $_SESSION['login'] = false;
+            $_SESSION['admin'] = false;
+        }
+        $adm = new AdminManager();
         $items = $adm->selectAll();
 
-        return $this->twig->render('Admin/index.html.twig', ['items' => $items]);
+        return $this->twig->render('Admin/index.html.twig', [
+            'items' => $items,
+            'connected' => $_SESSION['login'],
+            'admin' => $_SESSION['admin']
+        ]);
     }
 
 
@@ -47,10 +56,20 @@ class AdminController extends AbstractController
      */
     public function show(int $id)
     {
+        session_start();
+        if (empty($_SESSION['login'])) {
+            $_SESSION['login'] = false;
+            $_SESSION['admin'] = false;
+        }
+
         $adm = new AdminManager();
         $item = $adm->selectOneById($id);
 
-        return $this->twig->render('Admin/show.html.twig', ['item' => $item]);
+        return $this->twig->render('Admin/show.html.twig', [
+            'item' => $item,
+            'connected' => $_SESSION['login'],
+            'admin' => $_SESSION['admin']
+        ]);
     }
 
 
@@ -65,6 +84,12 @@ class AdminController extends AbstractController
      */
     public function update(int $id): string
     {
+        session_start();
+        if (empty($_SESSION['login'])) {
+            $_SESSION['login'] = false;
+            $_SESSION['admin'] = false;
+        }
+
         $adm = new AdminManager();
         $objet = $adm->selectOneById($id);
 
@@ -85,7 +110,11 @@ class AdminController extends AbstractController
             header('Location:/target/index');
         }
 
-        return $this->twig->render('Admin/edit.html.twig', ['item' => $objet]);
+        return $this->twig->render('Admin/edit.html.twig', [
+            'item' => $objet,
+            'connected' => $_SESSION['login'],
+            'admin' => $_SESSION['admin']
+        ]);
     }
 
 
@@ -99,6 +128,11 @@ class AdminController extends AbstractController
      */
     public function add()
     {
+        session_start();
+        if (empty($_SESSION['login'])) {
+            $_SESSION['login'] = false;
+            $_SESSION['admin'] = false;
+        }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $adm = new AdminManager();
@@ -113,13 +147,16 @@ class AdminController extends AbstractController
                 'bio' => $_POST['bio'],
                 'img' => $_POST['img'],
 
-                ];
+            ];
 
             $id = $adm->insert($item);
             header('Location:/Admin/show/' . $id);
         }
 
-        return $this->twig->render('Admin/add.html.twig');
+        return $this->twig->render('Admin/add.html.twig', [
+            'connected' => $_SESSION['login'],
+            'admin' => $_SESSION['admin']
+        ]);
     }
 
 
@@ -128,10 +165,21 @@ class AdminController extends AbstractController
      *
      * @param int $id
      */
+
     public function delete(int $id)
     {
+        session_start();
+        if (empty($_SESSION['login'])) {
+            $_SESSION['login'] = false;
+            $_SESSION['admin'] = false;
+        }
+
         $adm = new AdminManager();
         $adm->delete($id);
-        header('Location:/Admin/index');
+        header('Location:/Admin/index/');
+        return $this->twig->render('Admin/delete.html.twig', [
+                'connected' => $_SESSION['login'],
+                'admin' => $_SESSION['admin']
+            ]);
     }
 }
