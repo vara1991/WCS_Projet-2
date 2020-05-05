@@ -2,11 +2,12 @@
 {% block content %}
 
     <body class="target">
-    <h1>Cibles</h1>
 
     {% if admin == true %}
-        <a href="/Admin/index">Accès Admin</a>
+        <h1 class="cibles">Cibles <a href="/Admin/index">😈</a></h1>
     {% endif %}
+
+
     <div class="row">
         <div class="col-8">
             <div class="container-inside">
@@ -16,7 +17,7 @@
                             <div class="card" style="width: 18rem;">
                                 <img src="{{ item.img }}" alt=""/>
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ item.name }}</h5>
+                                    <h3 class="card-title">{{ item.name }}</h3>
                                     <p class="card-text">
                                         {{ item.bio }}</br>
                                         {{ item.status_name }}</br>
@@ -37,7 +38,7 @@
         <div class="col-4">
 
             <ul class="list-group list-group-flush left">
-                <h2>Deathlist</h2>
+                <h4 class="dead">Deathlist</h4>
                 {% for item in alive %}
                     <li class="list-group-item">{{ item.name }}</li>
                 {% endfor %}
