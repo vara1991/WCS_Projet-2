@@ -1,25 +1,30 @@
 {% extends 'layout.html.twig' %}
 {% block title %}Contact{% endblock %}
 {% block content %}
+    <div class="bg-contact">
+        <div class="overlay-contact"></div>
+        <form method="post">
+            <fieldset class="fieldset_contact">
+                <label for="email" class="label_contact">Email</label>
+                <input type="email" class="input_contact" id="email" name="email" placeholder="email@exemple.com">
+                <label for="name" class="label_contact">Prénom</label>
+                <input type="text" class="input_contact" id="name" name="name" placeholder="Prénom">
+                <label for="subject" class="label_contact">Objet</label>
+                <input type="text" class="input_contact" id="subject" name="subject" placeholder="Objet du message">
+                <label for="message" class="label_contact">Message</label>
+                <textarea class="input_contact" id="message" name="message" rows="8"></textarea>
 
-    <form method="post">
-        <fieldset class="fieldset_contact">
-            <label for="email" class="label_contact">Email</label>
-            <input type="email" class="input_contact" id="email" name="email" placeholder="email@exemple.com">
-            <label for="name" class="label_contact">Prénom</label>
-            <input type="text" class="input_contact" id="name" name="name" placeholder="Prénom">
-            <label for="subject" class="label_contact">Objet</label>
-            <input type="text" class="input_contact" id="subject" name="subject" placeholder="Objet du message">
-            <label for="message" class="label_contact">Message</label>
-            <textarea class="input_contact" id="message" name="message" rows="5"></textarea>
-            <div class="button_contact">
-                <button type="submit" id="button_contact">Envoyer</button>
-            </div>
+                <div class="button_contact">
+                    <button type="submit" id="button_contact">Envoyer</button>
+                </div>
 
-            {% if error %}
-                {{ error }}
-            {% endif %}
+                <div class="error">
+                    {% if error %}
+                        {{ error }}
+                    {% endif %}
+                </div>
 
-        </fieldset>
-    </form>
+            </fieldset>
+        </form>
+    </div>
 {% endblock %}

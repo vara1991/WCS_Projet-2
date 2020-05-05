@@ -1,0 +1,10 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Message Envoyé !{% endblock %}
+{% block content %}
+    <div class="bg-merci">
+        <h2 class="merci-title"> Merci {{ name }} !</h2> <br>
+        <div class="merci"> Votre message concernant {{ subject }} a bien été envoyé. <br>
+            <a href="../Home/index">Retour à l'accueil</a>
+        </div>
+    </div>
+{% endblock %}

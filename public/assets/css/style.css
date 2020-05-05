@@ -107,7 +107,7 @@ h3 {
 
 /* Log et register */
 
-.bg-log{
+.bg-log {
     background-image: url("https://i2.wp.com/secretnews.fr/wp-content/uploads/2018/10/tueurgage.jpg?resize=1024%2C576&ssl=1");
     background-repeat: no-repeat;
     background-size: 120%;
@@ -116,7 +116,7 @@ h3 {
     padding: 10rem;
 }
 
-.bg-r{
+.bg-r {
     background-image: url("https://store-images.s-microsoft.com/image/apps.63664.67008091102654339.9fe0ac03-105b-406e-a686-51ee1b2afca1.b301935d-6dc3-4f7a-bdbe-708530b0d558?mode=scale&q=90&h=1080&w=1920");
     background-repeat: no-repeat;
     background-size: 120%;
@@ -134,7 +134,7 @@ h3 {
     margin: auto;
     padding-top: 4rem;
     padding-bottom: 2rem;
-    background-color: rgb(96,96,96,0.3);
+    background-color: rgb(96, 96, 96, 0.3);
 
 }
 
@@ -146,19 +146,19 @@ h3 {
     font-weight: bold;
 }
 
-.link_register{
+.link_register {
     color: white;
     text-align: center;
 }
 
-.input_log, .input_r{
+.input_log, .input_r {
     width: 80%;
     padding: 0.5rem;
     margin: auto;
     margin-bottom: 1rem;
 }
 
-.input_log{
+.input_log {
     margin-bottom: 1.5rem;
 }
 
@@ -177,14 +177,15 @@ h3 {
     border-radius: 5%;
     font-weight: bold;
 }
-#button_log:hover, #button_r:hover{
+
+#button_log:hover, #button_r:hover {
     background-color: darkred;
     border: darkred;
-    color:black;
+    color: black;
     opacity: 0.6;
 }
 
-.error{
+.error {
     color: darkred;
     font-weight: bold;
     font-size: 20px;
@@ -262,40 +263,133 @@ h3 {
 
 /* Contact */
 
-.fieldset_contact, .fieldset_r{
-    width: 50%;
+.overlay-contact {
+    position: absolute;
+    top: 15em;
+    left: 0;
+    height: 120%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.bg-contact {
+    background-image: url("https://i.postimg.cc/B6QJ164w/hq.jpg");
+    background-repeat: no-repeat;
+    background-size: 190%;
+    background-position: center;
+    background-color: black;
+    padding: 10rem;
+}
+
+.fieldset_contact {
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border:solid 5px;
-    margin: 6rem auto ;
+    border: none;
+    margin: auto;
     padding-top: 4rem;
     padding-bottom: 2rem;
+    background-color: rgb(96, 96, 96, 0.3);
+    z-index: 2;
 }
 
-.label_contact, .label_r{
+.label_contact {
     align-self: flex-start;
     width: 80%;
     margin-left: 10%;
+    color: white;
+    font-weight: bold;
+    z-index: 2;
 }
 
-.input_contact, .input_r{
+.input_contact {
     width: 80%;
     padding: 0.5rem;
+    margin: auto;
+    margin-bottom: 1rem;
+    z-index: 2;
 }
 
-.button_contact, .button_r{
+.button_contact {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     width: 80%;
     padding-top: 1rem;
     padding-bottom: 2rem;
+    z-index: 2;
 }
 
-#button_contact, #button_r{
+#button_contact {
     width: 40%;
     padding: 0.5rem;
+    border-radius: 5%;
+    font-weight: bold;
+    z-index: 2;
+}
+
+#button_contact:hover {
+    background-color: darkred;
+    border: darkred;
+    color: black;
+    opacity: 0.6;
+}
+
+.error {
+    color: darkred;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    z-index: 2;
+}
+
+/* Merci */
+
+.bg-merci {
+    background-image: url("https://i.postimg.cc/sXRQCngp/trinity.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-color: black;
+    padding: 10rem;
+}
+
+.merci {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 30px;
+    width: 60%;
+    background-color: black;
+    opacity: 60%;
+    color: #a29797;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.merci-title {
+    text-align: center;
+    color: darkred;
+    padding: 4rem;
+    font-family: "Amatic SC", sans-serif;
+    font-weight: bold;
+    font-size: 100px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.merci a {
+    text-decoration: none;
+    color: #a29797;
+    font-size: 22px;
+    padding-top: 2em;
+}
+
+.merci a:hover {
+    color: darkred;
 }
 
 /* footer */
@@ -399,21 +493,22 @@ footer a:hover {
     }
 
     /* Log et register */
-    .bg-r{
+    .bg-r {
         width: 100%;
         height: 100%;
     }
 
-    .form-log-r{
-        width: 100%;
-        height: 100%;
-    }
-    .fieldset_log, .fieldset_r{
+    .form-log-r {
         width: 100%;
         height: 100%;
     }
 
-    .bg-log,.bg-r{
+    .fieldset_log, .fieldset_r {
+        width: 100%;
+        height: 100%;
+    }
+
+    .bg-log, .bg-r {
         background-size: cover;
     }
 
