@@ -40,12 +40,12 @@
 
 .big_title {
     background-color: black;
-    padding: 1em;
-    padding-bottom: 0.5em;
+    padding-top: 2em;
+    padding-bottom: 1.2em;
     text-align: center;
     color: darkred;
-    font-size: 90px;
-    font-family: "Amatic SC", sans-serif;
+    font-size: 70px;
+    font-family: 'Nosifer', cursive;
     font-weight: bold;
 }
 
@@ -197,18 +197,18 @@ h3 {
 .welcome {
     position: absolute;
     top: 30%;
-    left: 35%;
+    left: 25%;
     background-color: transparent;
     z-index: 2;
 }
 
 .welcome h2 {
-    text-align: center;
     color: darkred;
-    padding: 4rem;
-    font-family: "Amatic SC", sans-serif;
+    font-family: 'Nosifer', cursive;
     font-weight: bold;
-    font-size: 100px;
+    font-size: 70px;
+    padding: 4rem;
+
 }
 
 .welcome p {
@@ -256,9 +256,9 @@ h3 {
     text-align: center;
     color: darkred;
     padding: 4rem;
-    font-family: "Amatic SC", sans-serif;
+    font-family: 'Nosifer', cursive;
     font-weight: bold;
-    font-size: 100px;
+    font-size: 70px;
 }
 
 /* Contact */
@@ -267,7 +267,7 @@ h3 {
     position: absolute;
     top: 15em;
     left: 0;
-    height: 120%;
+    height: 128%;
     width: 100%;
     background-color: black;
     opacity: 0.5;
