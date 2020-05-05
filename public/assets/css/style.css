@@ -110,7 +110,8 @@ h3 {
 
 /* Log et register */
 
-.bg-log {
+
+.bg-log{
     background-image: url("https://i2.wp.com/secretnews.fr/wp-content/uploads/2018/10/tueurgage.jpg?resize=1024%2C576&ssl=1");
     background-repeat: no-repeat;
     background-size: 120%;
@@ -119,7 +120,8 @@ h3 {
     padding: 10rem;
 }
 
-.bg-r {
+
+.bg-r{
     background-image: url("https://store-images.s-microsoft.com/image/apps.63664.67008091102654339.9fe0ac03-105b-406e-a686-51ee1b2afca1.b301935d-6dc3-4f7a-bdbe-708530b0d558?mode=scale&q=90&h=1080&w=1920");
     background-repeat: no-repeat;
     background-size: 120%;
@@ -128,8 +130,8 @@ h3 {
     padding: 10rem;
 }
 
-.fieldset_log,
-.fieldset_r {
+
+.fieldset_log, .fieldset_r {
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -138,7 +140,7 @@ h3 {
     margin: auto;
     padding-top: 4rem;
     padding-bottom: 2rem;
-    background-color: rgb(96, 96, 96, 0.3);
+    background-color: rgb(96,96,96,0.3);
 }
 
 .label_log,
@@ -150,13 +152,12 @@ h3 {
     font-weight: bold;
 }
 
-.link_register {
+.link_register{
     color: white;
     text-align: center;
 }
 
-.input_log,
-.input_r {
+.input_log, .input_r{
     width: 80%;
     padding: 0.5rem;
     margin: auto;
@@ -183,6 +184,20 @@ h3 {
     padding: 0.5rem;
     border-radius: 5%;
     font-weight: bold;
+}
+
+#button_log:hover, #button_r:hover{
+    background-color: darkred;
+    border: darkred;
+    color:black;
+    opacity: 0.6;
+}
+
+.error{
+    color: darkred;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
 }
 
 #button_log:hover,
@@ -449,6 +464,43 @@ h3 {
     color: darkred;
 }
 
+/* Contact */
+
+.fieldset_contact, .fieldset_r{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:solid 5px;
+    margin: 6rem auto ;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+.label_contact, .label_r{
+    align-self: flex-start;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.input_contact, .input_r{
+    width: 80%;
+    padding: 0.5rem;
+}
+
+.button_contact, .button_r{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 80%;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+#button_contact, #button_r{
+    width: 40%;
+    padding: 0.5rem;
+}
 
 /* footer */
 
@@ -540,6 +592,7 @@ footer a:hover {
         background-color: transparent;
         z-index: 2;
     }
+  
     /* Log et register */
     .bg-r {
         width: 100%;
@@ -558,4 +611,25 @@ footer a:hover {
     .bg-r {
         background-size: cover;
     }
+
+
+    /* Log et register */
+    .bg-r{
+        width: 100%;
+        height: 100%;
+    }
+
+    .form-log-r{
+        width: 100%;
+        height: 100%;
+    }
+    .fieldset_log, .fieldset_r{
+        width: 100%;
+        height: 100%;
+    }
+
+    .bg-log,.bg-r{
+        background-size: cover;
+    }
+
 }
