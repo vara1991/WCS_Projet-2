@@ -273,20 +273,21 @@ h3 {
 /* User target */
 
 .cibles{
-    color: red;
+    color: darkred;
+
     text-align: center;
     margin-bottom: 5%;
 }
 
 
 .dead{
-    color: red;
+    color: darkred;
     text-align: center;
 }
 
 .list-group-item{
     background-color: black;
-    color: red;
+    color: #a29797;
     text-align: center;
 }
 
@@ -296,6 +297,12 @@ h3 {
 
 .right {
     text-decoration: line-through;
+    text-decoration-color: darkred;
+}
+
+.card{
+    margin-left: 5rem;
+    margin-bottom: 2rem;
 }
 
 .card-body{
@@ -303,11 +310,11 @@ h3 {
 }
 
 .card-text{
-    color: red;
+    color: #a29797;
 }
 
 .card-title{
-    color: red;
+    color: darkred;
 }
 
 /* Contact */
