@@ -30,7 +30,7 @@ class AdminController extends AbstractController
     public function index()
     {
         session_start();
-        if (empty($_SESSION['login'])) {
+        if (empty($_SESSION['login']) && empty($_SESSION['admin'])) {
             $_SESSION['login'] = false;
             $_SESSION['admin'] = false;
         }
@@ -57,7 +57,7 @@ class AdminController extends AbstractController
     public function show(int $id)
     {
         session_start();
-        if (empty($_SESSION['login'])) {
+        if (empty($_SESSION['login']) && empty($_SESSION['admin'])) {
             $_SESSION['login'] = false;
             $_SESSION['admin'] = false;
         }
@@ -85,7 +85,7 @@ class AdminController extends AbstractController
     public function update(int $id): string
     {
         session_start();
-        if (empty($_SESSION['login'])) {
+        if (empty($_SESSION['login']) && empty($_SESSION['admin'])) {
             $_SESSION['login'] = false;
             $_SESSION['admin'] = false;
         }
@@ -129,7 +129,7 @@ class AdminController extends AbstractController
     public function add()
     {
         session_start();
-        if (empty($_SESSION['login'])) {
+        if (empty($_SESSION['login']) && empty($_SESSION['admin'])) {
             $_SESSION['login'] = false;
             $_SESSION['admin'] = false;
         }
@@ -169,7 +169,7 @@ class AdminController extends AbstractController
     public function delete(int $id)
     {
         session_start();
-        if (empty($_SESSION['login'])) {
+        if (empty($_SESSION['login']) && empty($_SESSION['admin'])) {
             $_SESSION['login'] = false;
             $_SESSION['admin'] = false;
         }
