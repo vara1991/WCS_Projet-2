@@ -70,7 +70,7 @@ class AdminManager extends AbstractManager
      */
     public function update(array $item): bool
     {
-       
+
         // prepared request
         $statement = $this->pdo->prepare("UPDATE  " . self::TABLE . " SET `name` = :name, `bio` = :bio, `status_id` = :status_id, `bounty` = :bounty, `date_kill` = :date_kill, `weapon_id` = :weapon_id, `img` = :img WHERE id= :id");
         $statement->bindValue('id', $item['id'], \PDO::PARAM_INT);

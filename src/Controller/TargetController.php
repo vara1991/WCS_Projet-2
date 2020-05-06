@@ -30,8 +30,15 @@ class TargetController extends AbstractController
      */
     public function index()
     {
+        session_start();
+        if (empty($_SESSION['login'])) {
+            $_SESSION['login'] = false;
+            $_SESSION['admin'] = false;
+        }
         $tmr = new TargetManager();
         $targets = $tmr->selectAll();
+        $alive = $tmr->getAlive();
+        $dead = $tmr->getDead();
         $result = [];
         foreach ($targets as $target) {
             if (!empty($target['weapon_id'])) {
@@ -52,12 +59,14 @@ class TargetController extends AbstractController
                     $target['img'] = $item['img'];
                 }
             }
-
             array_push($result, $target);
         }
-
         return $this->twig->render('Target/index.html.twig', [
-            'targets' => $result
+            'targets' => $result,
+            'alive' => $alive,
+            'dead' => $dead,
+            'connected' => $_SESSION['login'],
+            'admin' => $_SESSION['admin']
         ]);
     }
 }
