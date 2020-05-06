@@ -17,13 +17,17 @@
                             <div class="card" style="width: 18rem;">
                                 <img src="{{ item.img }}" alt=""/>
                                 <div class="card-body">
-                                    <h3 class="card-title">{{ item.name }}</h3>
+                                    <h3 class="card-title red bold">{{ item.name }}</h3>
                                     <p class="card-text">
-                                        {{ item.bio }}</br>
-                                        {{ item.status_name }}</br>
-                                        {{ item.bounty }} </br>
-                                        {{ item.date_kill }} </br>
-                                        {{ item.weapon_name }}</br>
+                                        {{ item.bio }}</p>
+                                    <p class="card-text">
+                                        <span class="red bold">Statut:</span> {{ item.status_name }}</br>
+                                        <span class="red bold"> Prime:</span>{{ item.bounty }} </br>
+                                        {% if item.status_id == 1 %}
+                                        <span class="red bold"> Date du crime:</span>{{ item.date_kill }} </br>
+                                        <span class="red bold">Arme du crime:</span>{{ item.weapon_name }}</br>
+                                        {% endif %}
+                                    </p>
 
                                     </p>
                                 </div>

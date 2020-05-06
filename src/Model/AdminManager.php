@@ -37,18 +37,30 @@ class AdminManager extends AbstractManager
     {
         // prepared request
 
+        if ($_POST['status_id'] == 2) {
+            $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . "(`name`, `bio`, `status_id`, `bounty`, `img`) VALUES (:name, :bio, :status_id, :bounty,:img)");
+            $statement->bindValue('name', $item['name'], \PDO::PARAM_STR);
+            $statement->bindValue('status_id', $item['status_id'], \PDO::PARAM_INT);
+            $statement->bindValue('bounty', $item['bounty'], \PDO::PARAM_STR);
+            $statement->bindValue('bio', $item['bio'], \PDO::PARAM_STR);
+            $statement->bindValue('img', $item['img'], \PDO::PARAM_STR);
 
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . "(`name`, `bio`, `status_id`, `bounty`, `date_kill`, `weapon_id`, `img`) VALUES (:name, :bio, :status_id, :bounty, :date_kill, :weapon_id, :img)");
-        $statement->bindValue('name', $item['name'], \PDO::PARAM_STR);
-        $statement->bindValue('status_id', $item['status_id'], \PDO::PARAM_INT);
-        $statement->bindValue('bounty', $item['bounty'], \PDO::PARAM_STR);
-        $statement->bindValue('date_kill', $item['date_kill'], \PDO::PARAM_STR);
-        $statement->bindValue('weapon_id', $item['weapon_id'], \PDO::PARAM_INT);
-        $statement->bindValue('bio', $item['bio'], \PDO::PARAM_STR);
-        $statement->bindValue('img', $item['img'], \PDO::PARAM_STR);
+            if ($statement->execute()) {
+                return (int)$this->pdo->lastInsertId();
+            }
+        } else {
+            $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . "(`name`, `bio`, `status_id`, `bounty`, `date_kill`, `weapon_id`, `img`) VALUES (:name, :bio, :status_id, :bounty, :date_kill, :weapon_id, :img)");
+            $statement->bindValue('name', $item['name'], \PDO::PARAM_STR);
+            $statement->bindValue('status_id', $item['status_id'], \PDO::PARAM_INT);
+            $statement->bindValue('bounty', $item['bounty'], \PDO::PARAM_STR);
+            $statement->bindValue('date_kill', $item['date_kill'], \PDO::PARAM_STR);
+            $statement->bindValue('weapon_id', $item['weapon_id'], \PDO::PARAM_INT);
+            $statement->bindValue('bio', $item['bio'], \PDO::PARAM_STR);
+            $statement->bindValue('img', $item['img'], \PDO::PARAM_STR);
 
-        if ($statement->execute()) {
-            return (int)$this->pdo->lastInsertId();
+            if ($statement->execute()) {
+                return (int)$this->pdo->lastInsertId();
+            }
         }
     }
 

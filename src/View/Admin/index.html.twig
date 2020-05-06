@@ -6,7 +6,7 @@
         {% for item in items %}
             <li><a href="/Admin/show/{{ item.id }}">{{ item.id }}. {{ item.name }}</a></li>
         {% else %}
-            <li>Nothing to display</li>
+            <li>Action validée</li>
         {% endfor %}
     </ul>
     <a href="/Admin/add">Ajouter</a>
