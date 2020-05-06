@@ -31,7 +31,7 @@ class TargetController extends AbstractController
     public function index()
     {
         session_start();
-        if (empty($_SESSION['login'])) {
+        if (empty($_SESSION['login']) && empty($_SESSION['admin'])) {
             $_SESSION['login'] = false;
             $_SESSION['admin'] = false;
         }

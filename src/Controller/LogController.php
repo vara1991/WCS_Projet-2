@@ -19,12 +19,7 @@ class LogController extends AbstractController
                         $_SESSION['login'] = true;
                         $_SESSION['pseudo'] = $_POST['pseudo'];
                         if ($log['role_id'] == 1) {
-
-                            session_start();
-                            $_SESSION['login'] = true;
                             $_SESSION['admin'] = false;
-                            $_SESSION['pseudo'] = $_POST['pseudo'];
-
                             return $this->twig->render('Log/welcome.html.twig', [
                                 'connected' => $_SESSION['login'],
                                 'admin' => $_SESSION['admin'],
