@@ -34,7 +34,7 @@ class ContactController extends AbstractController
                 $headers = "from: " . $from;
                 mail($to, $subject, $content, $headers);
                 return $this->twig->render(
-                    'Contact/message.html.twig',
+                    'Contact/merci.twig',
                     [
                         'name' => $name,
                         'subject' => $subject,
@@ -44,7 +44,7 @@ class ContactController extends AbstractController
             }
         }
         if (empty($_POST['email']) || empty($_POST['name']) || empty($_POST['subject']) || empty($_POST['message'])) {
-            $error = "Tous les champs sont obligatoires";
+            $error = "Tous les champs doivent être remplis";
         }
         return $this->twig->render(
             'Contact/index.html.twig',
