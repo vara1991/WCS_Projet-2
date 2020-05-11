@@ -1,7 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Edit item </h1>
+    <h3 class="add_title bold red"> Modifier une cible </h3>
     {% include 'Admin/_form.html.twig' %}
     <a href="/Admin/show/{{ item.id }}">Retour</a>
 {% endblock %}
