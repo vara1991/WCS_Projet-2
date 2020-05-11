@@ -31,7 +31,7 @@ class HomeManager extends AbstractManager
     public function bounty()
     {
         // prepared request
-        $statement = $this->pdo->prepare("SELECT SUM(bounty) AS total_prime FROM target");
+        $statement = $this->pdo->prepare("SELECT SUM(bounty) AS total_prime FROM target WHERE status_id = 1");
         $statement->execute();
         return $statement->fetch();
     }
