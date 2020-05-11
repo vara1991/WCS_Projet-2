@@ -40,6 +40,7 @@ class TargetController extends AbstractController
         $alive = $tmr->getAlive();
         $dead = $tmr->getDead();
         $result = [];
+        
         foreach ($targets as $target) {
             if (!empty($target['weapon_id'])) {
                 $weapon = $tmr->getWeapon(intval($target['weapon_id']));
@@ -61,6 +62,12 @@ class TargetController extends AbstractController
             }
             array_push($result, $target);
         }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $tmr->getLike();
+        }
+            header("Refresh: url = /Target/index.html.twig/");
+
         return $this->twig->render('Target/index.html.twig', [
             'targets' => $result,
             'alive' => $alive,

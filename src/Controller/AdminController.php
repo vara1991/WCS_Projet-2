@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: root
@@ -138,27 +139,27 @@ class AdminController extends AbstractController
             $adm = new AdminManager();
 
             $item = [
-
                 'name' => $_POST['name'],
                 'status_id' => $_POST['status_id'],
                 'bounty' => $_POST['bounty'],
-                'date_kill' => $_POST['date_kill'],
-                'weapon_id' => $_POST['weapon_id'],
                 'bio' => $_POST['bio'],
-                'img' => $_POST['img'],
-
+                'img' => $_POST['img']
             ];
 
+            if ($_POST['status_id'] === 2) {
+                $item = [
+                    'date_kill' => $_POST['date_kill'],
+                    'weapon_id' => $_POST['weapon_id'],
+                ];
+            }
             $id = $adm->insert($item);
             header('Location:/Admin/show/' . $id);
         }
-
         return $this->twig->render('Admin/add.html.twig', [
             'connected' => $_SESSION['login'],
             'admin' => $_SESSION['admin']
         ]);
     }
-
 
     /**
      * Handle item deletion
@@ -176,10 +177,9 @@ class AdminController extends AbstractController
 
         $adm = new AdminManager();
         $adm->delete($id);
-        header('Location:/Admin/index/');
-        return $this->twig->render('Admin/delete.html.twig', [
-                'connected' => $_SESSION['login'],
-                'admin' => $_SESSION['admin']
-            ]);
+        return $this->twig->render('Admin/index.html.twig', [
+            'connected' => $_SESSION['login'],
+            'admin' => $_SESSION['admin']
+        ]);
     }
 }
