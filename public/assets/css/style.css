@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 /* header */
 
 .navbar {
@@ -110,7 +109,7 @@ h3 {
 
 /* Log et register */
 
-.bg-log{
+.bg-log {
     background-image: url("https://i2.wp.com/secretnews.fr/wp-content/uploads/2018/10/tueurgage.jpg?resize=1024%2C576&ssl=1");
     background-repeat: no-repeat;
     background-size: 120%;
@@ -119,7 +118,7 @@ h3 {
     padding: 10rem;
 }
 
-.bg-r{
+.bg-r {
     background-image: url("https://store-images.s-microsoft.com/image/apps.63664.67008091102654339.9fe0ac03-105b-406e-a686-51ee1b2afca1.b301935d-6dc3-4f7a-bdbe-708530b0d558?mode=scale&q=90&h=1080&w=1920");
     background-repeat: no-repeat;
     background-size: 120%;
@@ -138,7 +137,7 @@ h3 {
     margin: auto;
     padding-top: 4rem;
     padding-bottom: 2rem;
-    background-color: rgb(96,96,96,0.3);
+    background-color: rgb(96, 96, 96, 0.3);
 }
 
 .label_log,
@@ -184,7 +183,7 @@ h3 {
     font-weight: bold;
 }
 
-#button_log:hover, #button_r:hover{
+#button_log:hover, #button_r:hover {
     background-color: darkred;
     border: darkred;
     color: black;
@@ -285,25 +284,25 @@ h3 {
 
 /* User target */
 
-.cibles{
+.cibles {
     color: darkred;
     text-align: center;
     margin-bottom: 5%;
 }
 
 
-.dead{
+.dead {
     color: darkred;
     text-align: center;
 }
 
-.list-group-item{
+.list-group-item {
     background-color: black;
     color: #a29797;
     text-align: center;
 }
 
-.target{
+.target {
     background-color: black;
 }
 
@@ -312,20 +311,20 @@ h3 {
     text-decoration-color: darkred;
 }
 
-.card{
+.card {
     margin-left: 5rem;
     margin-bottom: 2rem;
 }
 
-.card-body{
+.card-body {
     background-color: black;
 }
 
-.card-text{
+.card-text {
     color: #a29797;
 }
 
-.card-title{
+.card-title {
     color: darkred;
 }
 
@@ -414,6 +413,79 @@ h3 {
     z-index: 2;
 }
 
+/* Admin CRUD */
+
+/* Add */
+
+.add_title {
+    font-size: 70px;
+    background-color: black;
+    margin : 0px;
+    text-align: center;
+}
+
+.bg-admin {
+    background-image: url("https://i.postimg.cc/KvdbG3Vm/158040-1920-1080.jpg");
+    background-repeat: no-repeat;
+    background-size: 190%;
+    background-position: center;
+    background-color: black;
+    padding: 10rem;
+}
+
+.fieldset_admin {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    margin: auto;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    background-color: rgb(96, 96, 96, 0.3);
+}
+
+.label_admin {
+    align-self: flex-start;
+    width: 80%;
+    margin-left: 10%;
+    color: white;
+    font-weight: bold;
+}
+
+.input_admin {
+    width: 80%;
+    padding: 0.5rem;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.input_admin {
+    margin-bottom: 1.5rem;
+}
+
+.button_admin {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 80%;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+#button_admin {
+    width: 40%;
+    padding: 0.5rem;
+    border-radius: 5%;
+    font-weight: bold;
+}
+
+#button_admin:hover {
+    background-color: darkred;
+    border: darkred;
+    color: black;
+    opacity: 0.6;
+}
 
 /* Merci */
 
@@ -640,40 +712,49 @@ footer a:hover {
         flex-wrap: wrap;
         height: 3.5em;
     }
+
     .navbar li {
         text-align: center;
         width: 40%;
     }
+
     .big_title {
         padding: 1.5em;
         padding-bottom: 0.5em;
     }
+
     /* footer */
     .footer_title {
         padding-bottom: 1rem;
     }
+
     .partenaires {
         flex-direction: column;
         align-items: center;
     }
+
     /* home */
     .home_title {
         font-size: 28px;
     }
+
     .pix-jenny {
         height: 12em;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 1em;
     }
+
     .stat {
         margin-left: auto;
         margin-right: auto;
         font-size: 16px;
     }
+
     .stat_title {
         font-size: 28px;
     }
+
     /* welcome et goodbye*/
     .welcome {
         position: absolute;
@@ -682,21 +763,24 @@ footer a:hover {
         background-color: transparent;
         z-index: 2;
     }
-  
+
     /* Log et register */
     .bg-r {
         width: 100%;
         height: 100%;
     }
+
     .form-log-r {
         width: 100%;
         height: 100%;
     }
+
     .fieldset_log,
     .fieldset_r {
         width: 100%;
         height: 100%;
     }
+
     .bg-log,
     .bg-r {
         background-size: cover;

@@ -1,53 +1,35 @@
 <body>
 
 <div id="signup-form">
-
-
     <div id="signup-inner">
-
         <div class="clearfix" id="header">
-
-
-
         </div>
-
-
-<form method="post">
-    
-    <input type="text" value="{{ item.id }}" name="id">
-
-    <label for="name">Name target</label>
-    <input type="text" value="{{ item.name }}" name="name">
-
-    <label for="status">Status</label>
-    <input type="text" value="{{ item.status_id }}" name="status_id">
-
-    <label for="bounty">Bounty</label>
-    <input type="text" value="{{ item.bounty }}" name="bounty">
-
-    <label for="date">Date kill</label>
-    <input type="text" value="{{ item.date_kill }}" name="date_kill">
-
-    <label for="weapon">Weapon</label>
-    <input type="text" value="{{ item.weapon_id }}" name="weapon_id">
-
-    <label for="img">Image target</label>
-    <input type="text" value="{{ item.img }}" name="img">
-   
-
-    <label for="Bio">Bio</label>
-    <textarea name="bio" value="{{ item.bio }}" cols="30" rows="10"></textarea>
-
-    <input type="submit" value="Valider">
-</form>
-
-
+        <div class="bg-admin">
+            <form method="post" class="form-log">
+                <fieldset class="fieldset_admin">
+                    <input type="hidden" value="{{ item.id }}" name="id" class="input_admin">
+                    <label for="name" class="label_admin">Nom de la cible :</label>
+                    <input type="text" value="{{ item.name }}" name="name" class="input_admin">
+                    <label for="status" class="label_admin">Statut :</label>
+                    <input type="text" value="{{ item.status_id }}" name="status_id" class="input_admin">
+                    <label for="bounty" class="label_admin">Prime :</label>
+                    <input type="text" value="{{ item.bounty }}" name="bounty" class="input_admin">
+                    <label for="date" class="label_admin">Date du crime :</label>
+                    <input type="text" value="{{ item.date_kill }}" name="date_kill" class="input_admin">
+                    <label for="weapon" class="label_admin">Arme du crime :</label>
+                    <input type="text" value="{{ item.weapon_id }}" name="weapon_id" class="input_admin">
+                    <label for="img" class="label_admin">Photo :</label>
+                    <input type="text" value="{{ item.img }}" name="img" class="input_admin">
+                    <label for="Bio" class="label_admin">Bio :</label>
+                    <textarea name="bio" value="{{ item.bio }}" cols="50" rows="10"></textarea>
+                    <div class="button_admin">
+                        <input type="submit" value="Ajouter" id="button_admin">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
     </div>
-
-
 </div>
-
-
 </div>
 
 </body>
