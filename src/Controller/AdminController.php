@@ -143,7 +143,7 @@ class AdminController extends AbstractController
                 'status_id' => $_POST['status_id'],
                 'bounty' => $_POST['bounty'],
                 'bio' => $_POST['bio'],
-                'img' => $_POST['img'],
+                'img' => $_POST['img']
             ];
 
             if ($_POST['status_id'] === 2) {
@@ -160,7 +160,6 @@ class AdminController extends AbstractController
             'admin' => $_SESSION['admin']
         ]);
     }
-
 
     /**
      * Handle item deletion

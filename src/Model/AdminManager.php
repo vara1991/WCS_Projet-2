@@ -38,7 +38,7 @@ class AdminManager extends AbstractManager
         // prepared request
 
         if ($_POST['status_id'] == 2) {
-            $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . "(`name`, `bio`, `status_id`, `bounty`, `img`) VALUES (:name, :bio, :status_id, :bounty,:img)");
+            $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . "(`name`, `bio`, `status_id`, `bounty`, `img`) VALUES (:name, :bio, :status_id, :bounty, :img)");
             $statement->bindValue('name', $item['name'], \PDO::PARAM_STR);
             $statement->bindValue('status_id', $item['status_id'], \PDO::PARAM_INT);
             $statement->bindValue('bounty', $item['bounty'], \PDO::PARAM_STR);
