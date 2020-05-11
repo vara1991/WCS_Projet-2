@@ -420,7 +420,7 @@ h3 {
 .add_title {
     font-size: 70px;
     background-color: black;
-    margin : 0px;
+    margin: 0px;
     text-align: center;
 }
 
@@ -485,6 +485,48 @@ h3 {
     border: darkred;
     color: black;
     opacity: 0.6;
+}
+
+.link_retour-adm {
+    font-size: 2em;
+    text-align: center;
+    background-color: black;
+    margin: 0px;
+}
+
+/* Index */
+
+.list-adm {
+    padding-top: 2em;
+    padding-bottom: 1em;
+    text-align: center;
+    background-color: black;
+    color: #a29797;
+    list-style: none;
+    text-decoration: none;
+    margin: 0px;
+}
+
+.link-list-adm {
+    font-size: 1.5em;
+    color: #a29797;
+}
+
+.list-adm a:hover {
+    color: darkred;
+    text-decoration: none;
+}
+
+.button_add-adm {
+    text-align: center;
+    background-color: black;
+    font-size: 1.5em;
+    padding-bottom: 2em;
+}
+
+.button_add-adm a:hover{
+    text-decoration: none;
+    color: darkred;
 }
 
 /* Merci */
