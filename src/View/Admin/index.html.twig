@@ -8,7 +8,7 @@
         {% for item in items %}
             <li><a href="/Admin/show/{{ item.id }}" class="link-list-adm">{{ item.name }}</a></li><br>
         {% else %}
-            <li>Action validée</li>
+            <li class="action">Action validée !</li>
         {% endfor %}
     </ul>
     <div class="button_add-adm">
