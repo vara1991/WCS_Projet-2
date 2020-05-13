@@ -269,16 +269,22 @@ h3 {
     opacity: 0.5;
     z-index: 1;
 }
+.display-none{
+    display: none;
+}
 
 .goodbye {
-    height: 25rem;
+    background-image: url("/assets/images/pistolet.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40rem;
     background-color: black;
 }
 
 .goodbye h2 {
     text-align: center;
     color: darkred;
-    padding: 4rem;
+    padding-top: 22rem;
     font-family: 'Nosifer', cursive;
     font-weight: bold;
     font-size: 70px;
