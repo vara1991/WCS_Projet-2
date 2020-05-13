@@ -72,10 +72,10 @@ class TargetManager extends AbstractManager
         return $statement->fetchAll();
     }
 
-    public function getLike()
+    public function getLike($id)
     {
         $statement = $this->pdo->prepare('UPDATE target SET score = score+1 WHERE id =:id');
-        $statement->bindValue('id', $_POST['id'], \PDO::PARAM_INT);
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
     }
 }

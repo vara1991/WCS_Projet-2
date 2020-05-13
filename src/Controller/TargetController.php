@@ -64,10 +64,11 @@ class TargetController extends AbstractController
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $tmr->getLike();
-        }
-            header("Refresh: url = /Target/index.html.twig/");
+            $tmr->getLike(intval($_POST['id']));
+            var_dump($_POST['id']);
+            header("Location: http://localhost:8000/target/index");
 
+        }
         return $this->twig->render('Target/index.html.twig', [
             'targets' => $result,
             'alive' => $alive,
