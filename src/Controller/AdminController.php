@@ -107,6 +107,14 @@ class AdminController extends AbstractController
 
             ];
 
+            if ($_POST['status_id'] === 2) {
+                $item = [
+                    'date_kill' => $_POST['date_kill'],
+                    'weapon_id' => $_POST['weapon_id'],
+                ];
+            }
+
+
             $adm->update($item);
             header('Location:/target/index');
         }
