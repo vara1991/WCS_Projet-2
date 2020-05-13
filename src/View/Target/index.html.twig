@@ -7,43 +7,51 @@
         <h1 class="cibles"><a href="/Admin/index">😈</a></h1>
     {% endif %}
 
-    <form method="POST">
-        <label for="target-select">Trier par:</label>
-        <select name="target" id="target-select">
-            <option value="option">--Choisissez une option--</option>
-            <option value="name">Nom</option>
-            <option value="bounty">Prime</option>
-            <option value="dead">Mort</option>
-            <option value="alive">Vivant</option>
-            <option value="date">Date de mort</option>
-        </select>
-        <button type="submit">Filtrer</button>
-    </form>
-
     <div class="row">
         <div class="col-8">
             <div class="container-inside">
+
+                <div class="filter">
+                    <form method="POST">
+                        <select name="target" id="target-select">
+                            <option value="option">Sélectionnez un filtre</option>
+                            <option value="name">Nom</option>
+                            <option value="bounty">Prime</option>
+                            <option value="dead">Statut : Mort</option>
+                            <option value="alive">Statut : Vivant</option>
+                            <option value="date">Date de mort</option>
+                        </select>
+                        <button type="submit" class="btn-filter">TRIER</button>
+                    </form>
+                </div>
+                <br>
+
                 <div class="row">
                     {% for item in targets %}
                         <div class="col-4">
                             <div class="card" id="plop">
                                 <img src="{{ item.img }}" alt=""/>
                                 <div class="card-body">
-                                    <h3 class="card-title red bold">{{ item.name }}
-                                        <form method="POST">
-                                            <input type="hidden" name="id" value="{{ item.id }}">
-                                            <button class="like" type="submit" name="like">LIKE
-                                            </button> {{ item.score }}
-                                        </form>
-                                    </h3>
+                                    <h3 class="card-title red bold">{{ item.name }}</h3>
+                                    <form method="POST">
+                                        <input type="hidden" name="id" value="{{ item.id }}">
+                                        <div class="ctn-like">
+                                            <button class="like" type="submit" name="like"><i class="em em-heart"
+                                                                                              aria-role="presentation"
+                                                                                              aria-label="HEAVY BLACK HEART"></i>
+                                            </button>
+                                            <div class="score">{{ item.score }}</div>
+                                        </div>
+                                    </form>
+                                    <br>
                                     <p class="card-text">
                                         {{ item.bio }}</p>
                                     <p class="card-text">
-                                        <span class="red bold">Statut:</span> {{ item.status_name }}</br>
-                                        <span class="red bold"> Prime:</span>{{ item.bounty }} € </br>
+                                        <span class="red bold">Statut :</span> {{ item.status_name }}</br>
+                                        <span class="red bold"> Prime :</span> {{ item.bounty }} € </br>
                                         {% if item.status_id == 1 %}
-                                            <span class="red bold"> Date du crime:</span>{{ item.date_kill }} </br>
-                                            <span class="red bold">Arme du crime:</span>{{ item.weapon_name }}</br>
+                                            <span class="red bold"> Date du crime :</span> {{ item.date_kill }} </br>
+                                            <span class="red bold">Arme du crime :</span> {{ item.weapon_name }}</br>
                                         {% endif %}
                                     </p>
                                 </div>
@@ -55,23 +63,20 @@
         </div>
 
         <div class="col-4 ">
-            <div class="bg-list">
-                <ul class="list-group list-group-flush left">
-                    <h4 class="dead">Death List</h4>
-                    {% for item in alive %}
-                        <li class="list-group-item">{{ item.name }}</li>
-                    {% endfor %}
-                </ul>
-
-                <ul class="list-group list-group-flush right">
-                    {% for item in dead %}
-                        <li class="list-group-item">{{ item.name }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
+            <ul class="list-group list-group-flush left">
+                <h4 class="dead">Death List :</h4>
+                {% for item in alive %}
+                    <li class="list-group-item">{{ item.name }}</li>
+                {% endfor %}
+            </ul>
+            <ul class="list-group list-group-flush right">
+                {% for item in dead %}
+                    <li class="list-group-item">{{ item.name }}</li>
+                {% endfor %}
+            </ul>
         </div>
-
     </div>
+
     </div>
     </body>
 {% endblock %}
