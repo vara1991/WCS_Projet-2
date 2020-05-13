@@ -110,7 +110,7 @@ h3 {
 
 /* Log et register */
 
-.bg-log{
+.bg-log {
     background-image: url("https://i2.wp.com/secretnews.fr/wp-content/uploads/2018/10/tueurgage.jpg?resize=1024%2C576&ssl=1");
     background-repeat: no-repeat;
     background-size: 120%;
@@ -119,7 +119,7 @@ h3 {
     padding: 10rem;
 }
 
-.bg-r{
+.bg-r {
     background-image: url("https://store-images.s-microsoft.com/image/apps.63664.67008091102654339.9fe0ac03-105b-406e-a686-51ee1b2afca1.b301935d-6dc3-4f7a-bdbe-708530b0d558?mode=scale&q=90&h=1080&w=1920");
     background-repeat: no-repeat;
     background-size: 120%;
@@ -128,8 +128,8 @@ h3 {
     padding: 10rem;
 }
 
-
-.fieldset_log, .fieldset_r {
+.fieldset_log,
+.fieldset_r {
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -138,7 +138,7 @@ h3 {
     margin: auto;
     padding-top: 4rem;
     padding-bottom: 2rem;
-    background-color: rgb(96,96,96,0.3);
+    background-color: rgb(96, 96, 96, 0.3);
 }
 
 .label_log,
@@ -155,7 +155,8 @@ h3 {
     text-align: center;
 }
 
-.input_log, .input_r {
+.input_log,
+.input_r {
     width: 80%;
     padding: 0.5rem;
     margin: auto;
@@ -184,7 +185,8 @@ h3 {
     font-weight: bold;
 }
 
-#button_log:hover, #button_r:hover{
+#button_log:hover,
+#button_r:hover {
     background-color: darkred;
     border: darkred;
     color: black;
@@ -285,49 +287,82 @@ h3 {
 
 /* User target */
 
-.cibles{
+.cibles {
     color: darkred;
     text-align: center;
     margin-bottom: 5%;
 }
 
-
-.dead{
+.dead {
     color: darkred;
     text-align: center;
+    font-size: 2em;
 }
 
-.list-group-item{
+.list-group-item {
     background-color: black;
     color: #a29797;
     text-align: center;
 }
 
-.target{
+.bg-list {
+    /*background-image: url("https://i.postimg.cc/WbNZJjVF/5887c26cbc2fc2ef3a186046.png ");
+    background-repeat: no-repeat;*/
+}
+
+.target {
     background-color: black;
+}
+
+.left {
+    font-family: 'Playball', cursive;
+    font-size: 2em;
 }
 
 .right {
     text-decoration: line-through;
     text-decoration-color: darkred;
+    font-family: 'Playball', cursive;
+    font-size: 2em;
 }
 
-.card{
+.card {
     margin-left: 5rem;
     margin-bottom: 2rem;
 }
 
-.card-body{
+#plop {
+    height: 700px;
+}
+
+#plop img {
+    height: 350px;
+}
+
+.card-body {
     background-color: black;
 }
 
-.card-text{
+.card-text {
     color: #a29797;
 }
 
-.card-title{
+.card-title {
     color: darkred;
 }
+
+.like {
+    border-radius: 10%;
+    color: darkred;
+    background: black;
+}
+
+.like:hover {
+    background-color: darkred;
+    /* Green */
+    color: black;
+}
+
 
 /* Contact */
 
@@ -461,6 +496,7 @@ h3 {
     color: darkred;
 }
 
+
 /* Contact */
 
 .overlay-contact {
@@ -546,6 +582,7 @@ h3 {
     z-index: 2;
 }
 
+
 /* Merci */
 
 .bg-merci {
@@ -591,6 +628,7 @@ h3 {
 .merci a:hover {
     color: darkred;
 }
+
 
 /* footer */
 
@@ -682,7 +720,6 @@ footer a:hover {
         background-color: transparent;
         z-index: 2;
     }
-  
     /* Log et register */
     .bg-r {
         width: 100%;
@@ -701,26 +738,22 @@ footer a:hover {
     .bg-r {
         background-size: cover;
     }
-
-
     /* Log et register */
     .bg-r {
         width: 100%;
         height: 100%;
     }
-
     .form-log-r {
         width: 100%;
         height: 100%;
     }
-
-    .fieldset_log, .fieldset_r {
+    .fieldset_log,
+    .fieldset_r {
         width: 100%;
         height: 100%;
     }
-
-    .bg-log, .bg-r {
+    .bg-log,
+    .bg-r {
         background-size: cover;
     }
-
 }

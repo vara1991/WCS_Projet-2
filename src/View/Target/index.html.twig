@@ -13,14 +13,14 @@
             <div class="container-inside">
                 <div class="row">
                     {% for item in targets %}
-                        <div class="col">
-                            <div class="card" style="width: 18rem;">
+                        <div class="col-4">
+                            <div class="card" id="plop">
                                 <img src="{{ item.img }}" alt=""/>
                                 <div class="card-body">
                                     <h3 class="card-title red bold">{{ item.name }}
                                     <form method="POST">
                                         <input type="hidden" name="id" value= "{{item.id}}" > 
-                                        <button type ="submit" name="like">LIKE</button> {{item.score}}
+                                        <button class="like" type ="submit" name="like">LIKE</button> {{item.score}}
                                     </form>
                                     </h3>
                                     <p class="card-text">
@@ -42,8 +42,8 @@
         </div>
 
 
-        <div class="col-4">
-
+        <div class="col-4 ">
+            <div class="bg-list">
             <ul class="list-group list-group-flush left">
                 <h4 class="dead">Death List</h4>
                 {% for item in alive %}
@@ -56,7 +56,7 @@
                     <li class="list-group-item">{{ item.name }}</li>
                 {% endfor %}
             </ul>
-
+            </div>
         </div>
 
     </div>
