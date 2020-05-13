@@ -288,8 +288,7 @@ h3 {
     font-size: 70px;
 }
 
-
-/* User target */
+/* Target */
 
 .filter {
     display: flex;
@@ -585,6 +584,7 @@ h3 {
     list-style: none;
     text-decoration: none;
     margin: 0px;
+    font-family: 'Changa', sans-serif;
 }
 
 .link-list-adm {
@@ -607,6 +607,46 @@ h3 {
 .button_add-adm a:hover {
     text-decoration: none;
     color: darkred;
+}
+
+/* Show */
+
+.title-show {
+    font-size: 70px;
+    background-color: black;
+    margin: 0px;
+    text-align: center;
+}
+
+.bg-show {
+    background-color: black;
+}
+
+.card-show {
+    margin: auto;
+}
+
+.link-show:hover {
+    color: darkred;
+    text-decoration: none;
+}
+
+.ctn-link-show {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#plopshow{
+    height: 600px;
+    width: 340px;
+}
+
+#plopshow img {
+    height: 320px;
+}
+
+.modif{
+    padding-right: 2em;
 }
 
 /* Merci */
