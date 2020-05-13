@@ -150,6 +150,8 @@ class AdminController extends AbstractController
                 'name' => $_POST['name'],
                 'status_id' => $_POST['status_id'],
                 'bounty' => $_POST['bounty'],
+                'date_kill' => $_POST['date_kill'],
+                'weapon_id' => $_POST['weapon_id'],
                 'bio' => $_POST['bio'],
                 'img' => $_POST['img']
             ];
