@@ -704,17 +704,6 @@ h3 {
 
 /* Contact */
 
-.overlay-contact {
-    position: absolute;
-    top: 15em;
-    left: 0;
-    height: 128%;
-    width: 100%;
-    background-color: black;
-    opacity: 0.5;
-    z-index: 1;
-}
-
 .bg-contact {
     background-image: url("https://i.postimg.cc/B6QJ164w/hq.jpg");
     background-repeat: no-repeat;
