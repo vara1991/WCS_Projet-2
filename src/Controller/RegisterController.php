@@ -37,7 +37,6 @@ class RegisterController extends AbstractController
                 $error['form'] = 'Tous les champs doivent être remplis';
             }
         }
-
         return $this->twig->render('Log/register.html.twig', [
             'error' => $error
         ]);
