@@ -21,8 +21,10 @@ class RegisterController extends AbstractController
                         $registerManager->add();
                         $_SESSION['login'] = true;
                         $_SESSION['pseudo'] = $_POST['pseudo'];
+                        $_SESSION['admin'] = false;
                         return $this->twig->render('Log/welcome.html.twig', [
                             'connected' => $_SESSION['login'],
+                            'admin' => $_SESSION['admin'] = false,
                             'pseudo' => $_SESSION['pseudo']
                         ]);
                     } else {

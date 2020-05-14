@@ -11,18 +11,31 @@
                     <input type="hidden" value="{{ item.id }}" name="id" class="input_admin">
                     <label for="name" class="label_admin">Nom de la cible :</label>
                     <input type="text" value="{{ item.name }}" name="name" class="input_admin">
+
                     <label for="status" class="label_admin">Statut :</label>
-                    <input type="text" value="{{ item.status_id }}" name="status_id" class="input_admin">
+                    <select name="status_id" id="status" class="input_admin">
+                        <option value="1">Mort</option>
+                        <option value="2">Vivant</option>
+                    </select>
+
                     <label for="bounty" class="label_admin">Prime :</label>
                     <input type="text" value="{{ item.bounty }}" name="bounty" class="input_admin">
                     <label for="date" class="label_admin">Date du crime :</label>
                     <input type="text" value="{{ item.date_kill }}" name="date_kill" class="input_admin">
+
                     <label for="weapon" class="label_admin">Arme du crime :</label>
-                    <input type="text" value="{{ item.weapon_id }}" name="weapon_id" class="input_admin">
+                    <select name="weapon_id" id="status" class="input_admin">
+                        <option value=""></option>
+                        <option value="1">Brosse à dent</option>
+                        <option value="2">Balai</option>
+                        <option value="3">Peigne</option>
+                    </select>
+
                     <label for="img" class="label_admin">Photo :</label>
                     <input type="text" value="{{ item.img }}" name="img" class="input_admin">
+
                     <label for="Bio" class="label_admin">Bio :</label>
-                    <textarea name="bio" cols="50" rows="5">{{ item.bio }}</textarea>
+                    <textarea name="bio" cols="40" rows="5" class="bio_admin" id="bio">{{ item.bio }}</textarea>
                     <div class="button_admin">
                         <input type="submit" value="Valider" id="button_admin">
                     </div>

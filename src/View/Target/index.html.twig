@@ -61,18 +61,21 @@
             </div>
         </div>
 
-        <div class="col-4 ">
-            <ul class="list-group list-group-flush left">
-                <h4 class="dead">Death List :</h4>
-                {% for item in alive %}
-                    <li class="list-group-item">{{ item.name }}</li>
-                {% endfor %}
-            </ul>
-            <ul class="list-group list-group-flush right">
-                {% for item in dead %}
-                    <li class="list-group-item">{{ item.name }}</li>
-                {% endfor %}
-            </ul>
+        <div>
+            <div class="dl">
+                <ul class="list-group list-group-flush left" >
+                    <h4 class="dead">Death List: </h4>
+                    {% for item in alive %}
+                        <li class="li-dl">{{ item.name }}</li>
+                    {% endfor %}
+                </ul>
+
+                <ul class="list-group list-group-flush right">
+                    {% for item in dead %}
+                        <li class="li-dl">{{ item.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
     </div>
 
