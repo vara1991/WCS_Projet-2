@@ -1,9 +1,32 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Item {{ item.title }}</h1>
-    <p>{{ item.id }}. {{ item.name }}</p>
-    <a href="/Admin/update/{{ item.id }}">Edit</a>
-    <a href="/Admin/delete/{{item.id}}">Supprimer</a>
-    <a href="/Admin/index">Retour</a>
+    <h3 class="title-show bold red">CIBLE : {{ item.name }}</h3>
+    <p class="link_retour-adm"><a href="/Admin/index/"><i class="em em-back" aria-role="presentation"
+                                                          aria-label="BACK WITH LEFTWARDS ARROW ABOVE"></i> </a></p>
+    <div class="bg-show">
+        <br>
+        <div class="card card-show" id="plopshow">
+            <img src="{{ item.img }}" alt=""/>
+            <div class="card-body">
+                <input type="hidden" name="id" value="{{ item.id }}">
+                <div class="ctn-like">
+                    <i class="em em-heart"
+                       aria-role="presentation"
+                       aria-label="HEAVY BLACK HEART"></i>
+                    <div class="score">{{ item.score }}</div>
+                </div>
+                <br>
+                <p class="card-text">
+                    {{ item.bio }}</p>
+                <br>
+                <div class="ctn-link-show">
+                    <a class="link-show modif" href="/Admin/update/{{ item.id }}">Modifier</a>
+                    <a class="link-show" href="/Admin/delete/{{ item.id }}">Supprimer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 {% endblock %}

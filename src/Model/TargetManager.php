@@ -60,14 +60,14 @@ class TargetManager extends AbstractManager
 
     public function getDead()
     {
-        $statement = $this->pdo->query('SELECT name FROM target WHERE status_id = 1');
+        $statement = $this->pdo->query('SELECT name FROM target WHERE status_id = 1 ORDER BY name');
 
         return $statement->fetchAll();
     }
 
     public function getAlive()
     {
-        $statement = $this->pdo->query('SELECT name FROM target WHERE status_id=2');
+        $statement = $this->pdo->query('SELECT name FROM target WHERE status_id=2 ORDER BY name');
 
         return $statement->fetchAll();
     }
@@ -77,5 +77,35 @@ class TargetManager extends AbstractManager
         $statement = $this->pdo->prepare('UPDATE target SET score = score+1 WHERE id =:id');
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
+    }
+
+    public function filterName()
+    {
+
+        return $this->pdo->query('SELECT * FROM target ORDER BY name')->fetchAll();
+    }
+
+    public function filterBounty()
+    {
+
+        return $this->pdo->query('SELECT * FROM target ORDER BY bounty DESC')->fetchAll();
+    }
+
+    public function filterDead()
+    {
+
+        return $this->pdo->query('SELECT * FROM target WHERE status_id = 1')->fetchAll();
+    }
+
+    public function filterAlive()
+    {
+
+        return $this->pdo->query('SELECT * FROM target WHERE status_id = 2')->fetchAll();
+    }
+
+    public function filterDate()
+    {
+
+        return $this->pdo->query('SELECT * FROM target WHERE status_id =1 ORDER BY date_kill DESC')->fetchAll();
     }
 }

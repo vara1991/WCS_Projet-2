@@ -80,7 +80,6 @@ h1 {
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 1em;
-    font-family: 'Roboto Slab', serif;
     font-family: 'Changa', sans-serif;
 }
 
@@ -90,7 +89,6 @@ h1 {
 
 .bio {
     line-height: 2em;
-    font-family: 'Roboto Slab', serif;
     font-family: 'Changa', sans-serif;
 }
 
@@ -268,7 +266,8 @@ h3 {
     opacity: 0.5;
     z-index: 1;
 }
-.display-none{
+
+.display-none {
     display: none;
 }
 
@@ -289,8 +288,33 @@ h3 {
     font-size: 70px;
 }
 
+/* Target */
 
-/* User target */
+.filter {
+    display: flex;
+    justify-content: left;
+    margin-left: 5rem;
+}
+
+.btn-filter {
+    background-color: darkred;
+    font-family: 'Changa', sans-serif;
+    border-radius: 15%;
+    padding: 0.2em;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    margin-left: 0.5em;
+    color: black;
+    font-weight: bold;
+    border: 2px solid snow;
+}
+
+#target-select {
+    color: darkred;
+    font-family: 'Changa', sans-serif;
+    font-weight: bold;
+    width: 255px;
+}
 
 .cibles {
     color: darkred;
@@ -302,12 +326,16 @@ h3 {
     color: darkred;
     text-align: center;
     font-size: 2em;
+    margin-top: 1em;
 }
 
 .list-group-item {
     background-color: black;
     color: #a29797;
     text-align: center;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .target {
@@ -321,6 +349,7 @@ h3 {
 
 .right {
     text-decoration: line-through;
+    text-decoration-thickness: 0.2em;
     text-decoration-color: darkred;
     font-family: 'Playball', cursive;
     font-size: 2em;
@@ -333,10 +362,11 @@ h3 {
 
 #plop {
     height: 700px;
+    width: 340px;
 }
 
 #plop img {
-    height: 350px;
+    height: 320px;
 }
 
 .card-body {
@@ -345,24 +375,37 @@ h3 {
 
 .card-text {
     color: #a29797;
+    font-family: 'Changa', sans-serif;
 }
 
 .card-title {
-    color: darkred;
+    color: #8b0000;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.ctn-like {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .like {
-    border-radius: 10%;
-    color: darkred;
-    background: black;
+    background-color: black;
+    border: 1px solid black;
+    color: #eee;
 }
 
-.like:hover {
-    background-color: darkred;
-    /* Green */
-    color: black;
+.em-heart {
+    height: 2em;
+    width: 1.7em;
 }
 
+.ctn-like .score {
+    color: #a29797;
+    font-size: 1.5em;
+    margin-left: 0.3em;
+}
 
 /* Contact */
 
@@ -541,6 +584,7 @@ h3 {
     list-style: none;
     text-decoration: none;
     margin: 0px;
+    font-family: 'Changa', sans-serif;
 }
 
 .link-list-adm {
@@ -560,11 +604,57 @@ h3 {
     padding-bottom: 2em;
 }
 
-.button_add-adm a:hover{
+.button_add-adm a:hover {
     text-decoration: none;
     color: darkred;
 }
 
+/* Show */
+
+.title-show {
+    font-size: 70px;
+    background-color: black;
+    margin: 0px;
+    text-align: center;
+}
+
+.bg-show {
+    background-color: black;
+}
+
+.card-show {
+    margin: auto;
+}
+
+.link-show:hover {
+    color: darkred;
+    text-decoration: none;
+}
+
+.ctn-link-show {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#plopshow{
+    height: 600px;
+    width: 340px;
+}
+
+#plopshow img {
+    height: 320px;
+}
+
+.modif{
+    padding-right: 2em;
+}
+
+.action{
+    font-size: 34px;
+    margin-bottom: 300px;
+    margin-top: 100px;
+
+}
 /* Merci */
 
 .bg-merci {
@@ -613,17 +703,6 @@ h3 {
 
 
 /* Contact */
-
-.overlay-contact {
-    position: absolute;
-    top: 15em;
-    left: 0;
-    height: 128%;
-    width: 100%;
-    background-color: black;
-    opacity: 0.5;
-    z-index: 1;
-}
 
 .bg-contact {
     background-image: url("https://i.postimg.cc/B6QJ164w/hq.jpg");
@@ -866,20 +945,24 @@ footer a:hover {
     .bg-r {
         background-size: cover;
     }
+
     /* Log et register */
     .bg-r {
         width: 100%;
         height: 100%;
     }
+
     .form-log-r {
         width: 100%;
         height: 100%;
     }
+
     .fieldset_log,
     .fieldset_r {
         width: 100%;
         height: 100%;
     }
+
     .bg-log,
     .bg-r {
         background-size: cover;

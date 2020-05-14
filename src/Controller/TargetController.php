@@ -36,11 +36,27 @@ class TargetController extends AbstractController
             $_SESSION['admin'] = false;
         }
         $tmr = new TargetManager();
-        $targets = $tmr->selectAll();
+        if (isset($_POST["target"])) {
+            if ($_POST["target"] == "option") {
+                $targets = $tmr->selectAll();
+            } elseif ($_POST["target"] == "name") {
+                $targets = $tmr->filterName();
+            } elseif ($_POST["target"] == "bounty") {
+                $targets = $tmr->filterBounty();
+            } elseif ($_POST["target"] == "dead") {
+                $targets = $tmr->filterDead();
+            } elseif ($_POST["target"] == "alive") {
+                $targets = $tmr->filterAlive();
+            } elseif ($_POST["target"] == "date") {
+                $targets = $tmr->filterDate();
+            }
+        } else {
+            $targets = $tmr->selectAll();
+        }
         $alive = $tmr->getAlive();
         $dead = $tmr->getDead();
         $result = [];
-        
+
         foreach ($targets as $target) {
             if (!empty($target['weapon_id'])) {
                 $weapon = $tmr->getWeapon(intval($target['weapon_id']));
@@ -64,11 +80,13 @@ class TargetController extends AbstractController
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $tmr->getLike(intval($_POST['id']));
-            var_dump($_POST['id']);
-            header("Location: http://localhost:8000/target/index");
-
+            if (isset($_POST["like"])) {
+                $tmr->getLike(intval($_POST['id']));
+                var_dump($_POST['id']);
+                header("Location: http://localhost:8000/target/index");
+            }
         }
+
         return $this->twig->render('Target/index.html.twig', [
             'targets' => $result,
             'alive' => $alive,
