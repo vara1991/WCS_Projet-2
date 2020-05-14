@@ -1,0 +1,989 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* header */
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    background-color: black;
+    height: 2em;
+    width: 100%;
+    font-weight: bold;
+    font-family: "Amatic SC", sans-serif;
+    font-size: 30px;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: darkred;
+    text-decoration: underline;
+}
+
+.active_link {
+    color: darkred;
+}
+
+.big_title {
+    background-color: black;
+    padding-top: 2em;
+    padding-bottom: 1.2em;
+    text-align: center;
+    color: darkred;
+    font-size: 70px;
+    font-family: 'Nosifer', cursive;
+    font-weight: bold;
+}
+
+
+/* home */
+
+h1 {
+    margin: 0px;
+}
+
+.body_home {
+    font-family: 'Amatic SC';
+    background-color: #000000;
+    color: #a29797;
+    font-size: 18px;
+}
+
+.pix-jenny {
+    height: 12em;
+    margin-top: 30px;
+}
+
+.red {
+    color: darkred;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.stat {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1em;
+    font-family: 'Changa', sans-serif;
+}
+
+.stat_title {
+    font-size: 30px;
+}
+
+.bio {
+    line-height: 2em;
+    font-family: 'Changa', sans-serif;
+}
+
+h3 {
+    font-family: "Amatic SC", sans-serif;
+}
+
+.home_title {
+    font-size: 35px;
+}
+
+.bio_title {
+    font-size: 30px;
+}
+
+
+/* Log et register */
+
+.bg-log {
+    background-image: url("https://i2.wp.com/secretnews.fr/wp-content/uploads/2018/10/tueurgage.jpg?resize=1024%2C576&ssl=1");
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: center;
+    background-color: black;
+    padding: 10rem;
+}
+
+.bg-r {
+    background-image: url("https://store-images.s-microsoft.com/image/apps.63664.67008091102654339.9fe0ac03-105b-406e-a686-51ee1b2afca1.b301935d-6dc3-4f7a-bdbe-708530b0d558?mode=scale&q=90&h=1080&w=1920");
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: right;
+    background-color: black;
+    padding: 10rem;
+}
+
+.fieldset_log,
+.fieldset_r {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    margin: auto;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    background-color: rgb(96, 96, 96, 0.3);
+}
+
+.label_log,
+.label_r {
+    align-self: flex-start;
+    width: 80%;
+    margin-left: 10%;
+    color: white;
+    font-weight: bold;
+}
+
+.link_register {
+    color: white;
+    text-align: center;
+}
+
+.input_log,
+.input_r {
+    width: 80%;
+    padding: 0.5rem;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.input_log {
+    margin-bottom: 1.5rem;
+}
+
+.button_log,
+.button_r {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 80%;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+#button_log,
+#button_r {
+    width: 40%;
+    padding: 0.5rem;
+    border-radius: 5%;
+    font-weight: bold;
+}
+
+#button_log:hover,
+#button_r:hover {
+    background-color: darkred;
+    border: darkred;
+    color: black;
+    opacity: 0.6;
+}
+
+.error {
+    color: darkred;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+#button_log:hover,
+#button_r:hover {
+    background-color: darkred;
+    border: darkred;
+    color: black;
+    opacity: 0.6;
+}
+
+.error {
+    color: darkred;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+/* welcome et goodbye*/
+
+.welcome {
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    background-color: transparent;
+    z-index: 2;
+}
+
+.welcome h2 {
+    color: darkred;
+    font-family: 'Nosifer', cursive;
+    font-weight: bold;
+    font-size: 70px;
+    padding-top: 4rem;
+}
+
+.welcome p {
+    text-align: center;
+    font-size: 34px
+}
+
+.welcome a:hover {
+    text-decoration: none;
+    font-size: larger;
+}
+
+.cover video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.cover .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.display-none {
+    display: none;
+}
+
+.goodbye {
+    background-image: url("/assets/images/pistolet.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40rem;
+    background-color: black;
+}
+
+.goodbye h2 {
+    text-align: center;
+    color: darkred;
+    padding-top: 22rem;
+    font-family: 'Nosifer', cursive;
+    font-weight: bold;
+    font-size: 70px;
+}
+
+/* Target */
+
+.filter {
+    display: flex;
+    justify-content: left;
+    margin-left: 5rem;
+}
+
+.btn-filter {
+    background-color: darkred;
+    font-family: 'Changa', sans-serif;
+    border-radius: 15%;
+    padding: 0.2em;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    margin-left: 0.5em;
+    color: black;
+    font-weight: bold;
+    border: 2px solid snow;
+}
+
+#target-select {
+    color: darkred;
+    font-family: 'Changa', sans-serif;
+    font-weight: bold;
+    width: 255px;
+}
+
+.cibles {
+    color: darkred;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.dl{
+    background-image: url("https://i.postimg.cc/WbNZJjVF/5887c26cbc2fc2ef3a186046.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 20rem;
+    text-align: center;
+    padding: 5rem;
+    margin-left: 9rem;
+}
+
+.li-dl{
+    list-style: none;
+}
+
+.dead {
+    color: darkred;
+    text-align: center;
+    font-size: 37px;
+    margin-bottom: 2rem;
+}
+
+.list-group{
+    color: black;
+    text-align: center;
+    width: 100%;
+}
+
+.target {
+    background-color: black;
+}
+
+.left {
+    font-family: 'Playball', cursive;
+    font-size: 30px;
+}
+
+.right {
+    text-decoration: line-through;
+    text-decoration-thickness: 0.2em;
+    text-decoration-color: darkred;
+    font-family: 'Playball', cursive;
+    font-size: 30px;
+}
+
+.card {
+    margin-left: 5rem;
+    margin-bottom: 2rem;
+}
+
+#plop {
+    height: 700px;
+    width: 340px;
+}
+
+#plop img {
+    height: 320px;
+}
+
+.card-body {
+    background-color: black;
+}
+
+.card-text {
+    color: #a29797;
+    font-family: 'Changa', sans-serif;
+}
+
+.card-title {
+    color: #8b0000;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.ctn-like {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.like {
+    background-color: black;
+    border: 1px solid black;
+    color: #eee;
+}
+
+.em-heart {
+    height: 2em;
+    width: 1.7em;
+}
+
+.ctn-like .score {
+    color: #a29797;
+    font-size: 1.5em;
+    margin-left: 0.3em;
+}
+
+/* Contact */
+
+.overlay-contact {
+    position: absolute;
+    top: 15em;
+    left: 0;
+    height: 128%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.bg-contact {
+    background-image: url("https://i.postimg.cc/B6QJ164w/hq.jpg");
+    background-repeat: no-repeat;
+    background-size: 190%;
+    background-position: center;
+    background-color: black;
+    padding: 10rem;
+}
+
+.fieldset_contact {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    margin: auto;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    background-color: rgb(96, 96, 96, 0.3);
+    z-index: 2;
+}
+
+.label_contact {
+    align-self: flex-start;
+    width: 80%;
+    margin-left: 10%;
+    color: white;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.input_contact {
+    width: 80%;
+    padding: 0.5rem;
+    margin: auto;
+    margin-bottom: 1rem;
+    z-index: 2;
+}
+
+.button_contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 80%;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    z-index: 2;
+}
+
+#button_contact {
+    width: 40%;
+    padding: 0.5rem;
+    border-radius: 5%;
+    font-weight: bold;
+    z-index: 2;
+}
+
+#button_contact:hover {
+    background-color: darkred;
+    border: darkred;
+    color: black;
+    opacity: 0.6;
+}
+
+.error {
+    color: darkred;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    z-index: 2;
+}
+
+/* Admin CRUD */
+
+/* Add */
+
+.add_title {
+    font-size: 70px;
+    background-color: black;
+    margin: 0px;
+    text-align: center;
+}
+
+.bg-admin {
+    background-image: url("https://i.postimg.cc/KvdbG3Vm/158040-1920-1080.jpg");
+    background-repeat: no-repeat;
+    background-size: 180%;
+    background-position: center;
+    background-color: black;
+    padding: 10rem;
+}
+
+.fieldset_admin {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    margin: auto;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    background-color: rgb(96, 96, 96, 0.3);
+}
+
+.label_admin {
+    align-self: flex-start;
+    width: 80%;
+    margin-left: 10%;
+    color: white;
+    font-weight: bold;
+}
+
+.input_admin {
+    width: 80%;
+    padding: 0.5rem;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.input_admin {
+    margin-bottom: 1.5rem;
+}
+
+.bio_admin{
+    margin:auto;
+}
+
+.button_admin {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    width: 100%;
+
+}
+
+#button_admin {
+    width: 40%;
+    padding: 0.5rem;
+    border-radius: 5%;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+#button_admin:hover {
+    background-color: darkred;
+    border: darkred;
+    color: black;
+    opacity: 0.6;
+}
+
+.link_retour-adm {
+    font-size: 2em;
+    text-align: center;
+    background-color: black;
+    margin: 0px;
+}
+
+/* Index */
+
+.list-adm {
+    padding-top: 2em;
+    padding-bottom: 1em;
+    text-align: center;
+    background-color: black;
+    color: #a29797;
+    list-style: none;
+    text-decoration: none;
+    margin: 0px;
+    font-family: 'Changa', sans-serif;
+}
+
+.link-list-adm {
+    font-size: 1.5em;
+    color: #a29797;
+}
+
+.list-adm a:hover {
+    color: darkred;
+    text-decoration: none;
+}
+
+.button_add-adm {
+    text-align: center;
+    background-color: black;
+    font-size: 1.5em;
+    padding-bottom: 2em;
+}
+
+.button_add-adm a:hover {
+    text-decoration: none;
+    color: darkred;
+}
+
+/* Show */
+
+.title-show {
+    font-size: 70px;
+    background-color: black;
+    margin: 0px;
+    text-align: center;
+}
+
+.bg-show {
+    background-color: black;
+}
+
+.card-show {
+    margin: auto;
+}
+
+.link-show:hover {
+    color: darkred;
+    text-decoration: none;
+}
+
+.ctn-link-show {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#plopshow{
+    height: 600px;
+    width: 340px;
+}
+
+#plopshow img {
+    height: 320px;
+}
+
+.modif{
+    padding-right: 2em;
+}
+
+.action{
+    font-size: 34px;
+    margin-bottom: 300px;
+    margin-top: 100px;
+
+}
+/* Merci */
+
+.bg-merci {
+    background-image: url("https://i.postimg.cc/sXRQCngp/trinity.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-color: black;
+    padding: 10rem;
+}
+
+.merci {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 30px;
+    width: 60%;
+    background-color: black;
+    opacity: 60%;
+    color: #a29797;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.merci-title {
+    text-align: center;
+    color: darkred;
+    padding: 4rem;
+    font-family: "Amatic SC", sans-serif;
+    font-weight: bold;
+    font-size: 100px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.merci a {
+    text-decoration: none;
+    color: #a29797;
+    font-size: 22px;
+    padding-top: 2em;
+}
+
+.merci a:hover {
+    color: darkred;
+}
+
+
+/* Contact */
+
+.bg-contact {
+    background-image: url("https://i.postimg.cc/B6QJ164w/hq.jpg");
+    background-repeat: no-repeat;
+    background-size: 190%;
+    background-position: center;
+    background-color: black;
+    padding: 10rem;
+}
+
+.fieldset_contact {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    margin: auto;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    background-color: rgb(96, 96, 96, 0.3);
+    z-index: 2;
+}
+
+.label_contact {
+    align-self: flex-start;
+    width: 80%;
+    margin-left: 10%;
+    color: white;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.input_contact {
+    width: 80%;
+    padding: 0.5rem;
+    margin: auto;
+    margin-bottom: 1rem;
+    z-index: 2;
+}
+
+.button_contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 80%;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    z-index: 2;
+}
+
+#button_contact {
+    width: 40%;
+    padding: 0.5rem;
+    border-radius: 5%;
+    font-weight: bold;
+    z-index: 2;
+}
+
+#button_contact:hover {
+    background-color: darkred;
+    border: darkred;
+    color: black;
+    opacity: 0.6;
+}
+
+.error {
+    color: darkred;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    z-index: 2;
+}
+
+
+/* Merci */
+
+.bg-merci {
+    background-image: url("https://i.postimg.cc/sXRQCngp/trinity.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-color: black;
+    padding: 10rem;
+}
+
+.merci {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 30px;
+    width: 60%;
+    background-color: black;
+    opacity: 60%;
+    color: #a29797;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.merci-title {
+    text-align: center;
+    color: darkred;
+    padding: 4rem;
+    font-family: "Amatic SC", sans-serif;
+    font-weight: bold;
+    font-size: 100px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.merci a {
+    text-decoration: none;
+    color: #a29797;
+    font-size: 22px;
+    padding-top: 2em;
+}
+
+.merci a:hover {
+    color: darkred;
+}
+
+
+/* footer */
+
+footer {
+    padding-bottom: 1rem;
+    background-color: black;
+    color: white;
+    font-family: "Amatic SC", sans-serif;
+}
+
+footer li {
+    list-style: none;
+    font-size: 25px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: darkred;
+    text-decoration: underline;
+}
+
+.footer_title {
+    text-align: center;
+    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+    font-size: 30px;
+    font-weight: bold;
+    color: darkred;
+}
+
+.partenaires {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/*///////////////////////////////////////  Mobile Styles //////////////////////////////////////////////////////*/
+
+@media (max-width: 767px) {
+    /* header */
+    .navbar {
+        flex-wrap: wrap;
+        height: 3.5em;
+    }
+
+    .navbar li {
+        text-align: center;
+        width: 40%;
+    }
+
+    .big_title {
+        padding: 1.5em;
+        padding-bottom: 0.5em;
+    }
+
+    /* footer */
+    .footer_title {
+        padding-bottom: 1rem;
+    }
+
+    .partenaires {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* home */
+    .home_title {
+        font-size: 28px;
+    }
+
+    .pix-jenny {
+        height: 12em;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1em;
+    }
+
+    .stat {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16px;
+    }
+
+    .stat_title {
+        font-size: 28px;
+    }
+
+    /* welcome et goodbye*/
+    .welcome {
+        position: absolute;
+        top: 20%;
+        left: 10%;
+        background-color: transparent;
+        z-index: 2;
+    }
+
+    /* Log et register */
+    .bg-r {
+        width: 100%;
+        height: 100%;
+    }
+
+    .form-log-r {
+        width: 100%;
+        height: 100%;
+    }
+
+    .fieldset_log,
+    .fieldset_r {
+        width: 100%;
+        height: 100%;
+    }
+
+    .bg-log,
+    .bg-r {
+        background-size: cover;
+    }
+
+    /* Log et register */
+    .bg-r {
+        width: 100%;
+        height: 100%;
+    }
+
+    .form-log-r {
+        width: 100%;
+        height: 100%;
+    }
+
+    .fieldset_log,
+    .fieldset_r {
+        width: 100%;
+        height: 100%;
+    }
+
+    .bg-log,
+    .bg-r {
+        background-size: cover;
+    }
+}

@@ -1,0 +1,7 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h3 class="add_title bold red"> Modifier une cible </h3>
+    <p class="link_retour-adm"><a href="/Admin/show/{{ item.id }}"><i class="em em-back" aria-role="presentation" aria-label="BACK WITH LEFTWARDS ARROW ABOVE"></i> </a></p>
+    {% include 'Admin/_form.html.twig' %}
+{% endblock %}

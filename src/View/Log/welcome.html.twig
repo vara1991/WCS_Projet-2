@@ -1,0 +1,19 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+
+    <div class="cover">
+        <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="/assets/video/ThePurge.mp4" type="video/mp4">
+        </video>
+
+        <div class="welcome">
+            <h2>WELCOME {{ pseudo }}</h2>
+            <p><a href="/target/index"><i class="em em-hocho" aria-role="presentation" aria-label="HOCHO"></i></a></p>
+        </div>
+
+    </div>
+    
+{% endblock %}

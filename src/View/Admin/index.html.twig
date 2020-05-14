@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h3 class="add_title bold red">Cibles</h3>
+    <p class="link_retour-adm"><a href="/target/index"><i class="em em-back" aria-role="presentation"
+                                                          aria-label="BACK WITH LEFTWARDS ARROW ABOVE"></i> </a></p>
+    <ul class="list-adm">
+        {% for item in items %}
+            <li><a href="/Admin/show/{{ item.id }}" class="link-list-adm">{{ item.name }}</a></li><br>
+        {% else %}
+            <li class="action">Action validée !</li>
+        {% endfor %}
+    </ul>
+    <div class="button_add-adm">
+       <a href="/Admin/add">Ajouter une cible</a>
+    </div>
+{% endblock %}
