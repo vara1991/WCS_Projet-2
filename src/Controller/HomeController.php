@@ -32,14 +32,12 @@ class HomeController extends AbstractController
         $gain = $homeManager->bounty();
         $kill = $homeManager->kill();
         $maxkill = $homeManager->killByDate();
-        $favWeapon = $homeManager->favWeapon();
 
         return $this->twig->render('Home/index.html.twig', [
                 'connected' => $_SESSION['login'],
                 'gain' => $gain['total_prime'],
                 'kill' => $kill['dead_status'],
                 'maxkill' => $maxkill['same_date'],
-                'favWeapon' => $favWeapon['favorite_weapon']
             ]);
     }
 }

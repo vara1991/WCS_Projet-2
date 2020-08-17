@@ -51,14 +51,4 @@ class HomeManager extends AbstractManager
         return $statement->fetch();
     }
 
-    public function favWeapon()
-    {
-        // prepared request
-        $statement = $this->pdo->prepare("SELECT MAX(weapon_name) AS favorite_weapon 
-        FROM weapon 
-        JOIN target 
-        ON weapon.id = target.weapon_id");
-        $statement->execute();
-        return $statement->fetch();
-    }
 }

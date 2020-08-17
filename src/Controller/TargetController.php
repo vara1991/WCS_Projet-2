@@ -82,7 +82,6 @@ class TargetController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (isset($_POST["like"])) {
                 $tmr->getLike(intval($_POST['id']));
-                var_dump($_POST['id']);
                 header("Location: http://localhost:8000/target/index");
             }
         }

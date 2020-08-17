@@ -41,11 +41,11 @@ class ContactController extends AbstractController
                         'connected' => $_SESSION['login'],
                     ]
                 );
+            }else{
+                $error = "Tous les champs doivent être remplis";
             }
         }
-        if (empty($_POST['email']) || empty($_POST['name']) || empty($_POST['subject']) || empty($_POST['message'])) {
-            $error = "Tous les champs doivent être remplis";
-        }
+
         return $this->twig->render(
             'Contact/index.html.twig',
             [
