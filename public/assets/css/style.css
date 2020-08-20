@@ -61,6 +61,7 @@ h1 {
     background-color: #000000;
     color: #a29797;
     font-size: 18px;
+    min-height: calc(100vh - 462px);
 }
 
 .pix-jenny {
@@ -220,10 +221,10 @@ h3 {
 
 .welcome {
     position: absolute;
-    top: 30%;
-    left: 25%;
-    background-color: transparent;
-    z-index: 2;
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+
 }
 
 .welcome h2 {
@@ -512,6 +513,11 @@ h3 {
 
 /* Admin CRUD */
 
+.body-admin{
+    min-height: calc(100vh - 462px);
+    background-color: black;
+}
+
 /* Add */
 
 .add_title {
@@ -563,12 +569,12 @@ h3 {
 
 .bio_admin{
     margin:auto;
+    width: 80%;
 }
 
 .button_admin {
     display: flex;
     flex-direction: row;
-    width: 80%;
     padding-top: 1rem;
     padding-bottom: 2rem;
     width: 100%;
@@ -576,12 +582,15 @@ h3 {
 }
 
 #button_admin {
-    width: 40%;
-    padding: 0.5rem;
+    width: 80%;
+    height: 3rem;
     border-radius: 5%;
     font-weight: bold;
     margin: auto;
     margin-top: 2rem;
+    background-color: darkred;
+    border: darkred;
+    color: black;
 }
 
 #button_admin:hover {
