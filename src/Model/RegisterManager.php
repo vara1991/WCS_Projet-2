@@ -11,23 +11,23 @@ class RegisterManager extends AbstractManager
         parent::__construct(self::TABLE);
     }
 
-    public function add()
+    public function add($register)
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (username,email,password,role_id) 
         VALUES (:username,:email,:password,:role)");
 
-        $statement->bindValue('username', $_POST['pseudo']);
-        $statement->bindValue('email', $_POST['email']);
-        $statement->bindValue('password', $_POST['password']);
-        $statement->bindValue('role', $_POST['role']);
+        $statement->bindValue('username', $register['pseudo']);
+        $statement->bindValue('email', $register['email']);
+        $statement->bindValue('password', $register['password']);
+        $statement->bindValue('role', $register['role']);
 
         $statement->execute();
     }
 
-    public function user()
+    public function user($speudo)
     {
         $statement = $this->pdo->prepare("SELECT username FROM user WHERE username=:username");
-        $statement->bindValue('username', $_POST['pseudo']);
+        $statement->bindValue('username', $speudo);
         $statement->execute();
         return $statement->fetch();
     }
